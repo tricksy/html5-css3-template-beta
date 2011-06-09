@@ -1,0 +1,258 @@
+@charset "utf-8";
+/* ===================================================================
+フォントサイズ
+ 10px = 77%     11px = 85%     12px = 93%     13px = 100%
+ 14px = 108%    15px = 116%    16px = 123.1%  17px = 131%
+ 18px = 138.5%  19px = 146.5%  20px = 153.9%  21px = 161.6%
+ 22px = 167%    23px = 174%    24px = 182%    25px = 189%
+ 26px = 197%
+=================================================================== */
+/*----------------------------------------------------
+	共通
+----------------------------------------------------*/
+/* スクロールバーの有無によるズレ対策 */
+html {
+	overflow-y: scroll;
+}
+body {
+	font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	line-height: 2.5;
+}
+input, textarea {
+	font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+}
+/* for IE6 */
+* html body {
+	font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+}
+* html input, * html textarea {
+	font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+}
+h1 {
+	display: block;
+	padding: 5px;
+}
+h2 {
+	display: block;
+	padding: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CCC;
+	margin-bottom: 10px;
+}
+h3 {
+	display: block;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CCC;
+	margin-bottom: 5px;
+}
+
+/* よく使いそうなCSS3
+----------------------------------------------------*/
+#selectors {
+	/* 角丸 */
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	/* 角丸個別 */
+	-webkit-border-top-right-radius: 15px;
+	-moz-border-radius-topright: 15px;
+	border-top-right-radius: 15px;
+	/* ボックスに影 */
+	-webkit-box-shadow: 1px 1px 3px #999;
+	-moz-box-shadow: 1px 1px 3px #999;
+	box-shadow: 1px 1px 3px #999;
+	/* テキストに影 */
+	text-shadow: 1px 1px 0px #999;
+}
+/* 汎用
+----------------------------------------------------*/
+/* clerfix */
+#contents:after {
+	content: ".";
+	display: block;
+	visibility: hidden;
+	height: 0.1px;
+	font-size: 0.1em;
+	line-height: 0;
+	clear: both;
+}
+.imgR {
+	float: right;
+	margin: 0 0 10px 10px;
+}
+.imgL {
+	float: left;
+	margin: 0 10px 10px 0;
+}
+.tC, .btn {
+	text-align: center;
+}
+.tR, .sign {
+	text-align: right;
+}
+.odd{
+	background-color: #fff;
+}
+.even{
+	background-color: #efefef;
+}
+/*----------------------------------------------------
+	#page（ページ全体）
+----------------------------------------------------*/
+#page {
+	width: 960px;
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 100%;
+	background-color: #EEE;
+}
+/*----------------------------------------------------
+#contents（メインとサイド）
+----------------------------------------------------*/
+#contents {
+ /zoom: 1;
+	margin-bottom: 10px;
+}
+/*----------------------------------------------------
+#main（メインコンテンツ）
+----------------------------------------------------*/
+#main {
+	float: left;
+	width: 600px;
+	background: #fff;
+	padding: 10px;
+}
+#main table, #main ol, #main ul, #main dl, #main blockquote, #main pre, #main p {
+	margin-bottom: 10px;
+}
+#main .pageTop {
+	clear: both;
+	margin: 0;
+	text-align: right;
+}
+/*----------------------------------------------------
+#side（サイドバー）
+----------------------------------------------------*/
+#side {
+	float: right;
+	width: 310px;
+	padding: 10px;
+	background-color: #fff;
+}
+/* ===================================================================
+ヘッダーやフッターなどサイト内共通
+=================================================================== */
+/*----------------------------------------------------
+#globalHeader
+----------------------------------------------------*/
+#globalHeader {
+	margin-bottom: 10px;
+	background-color: #fff;
+}
+/* グローバルナビゲーション
+----------------------------------------------------*/
+#globalHeader nav {
+}
+#globalHeader nav ul {
+ /zoom: 1;
+	clear: both;
+	float: none;
+}
+#globalHeader nav ul:after {
+	content: ".";
+	display: block;
+	visibility: hidden;
+	height: 0.1px;
+	font-size: 0.1em;
+	line-height: 0;
+	clear: both;
+}
+#globalHeader nav ul li {
+	float: left;
+	display: block;
+	padding: 10px;
+}
+/* サイト内検索
+----------------------------------------------------*/
+#globalHeader form {
+	clear: both;
+}
+/*----------------------------------------------------
+#globalFooter
+----------------------------------------------------*/
+#globalFooter {
+	clear: both;
+	background-color: #fff;
+}
+#globalFooter ul {
+	list-style: none;
+	clear: both;
+}
+#globalFooter ul li {
+	display: block;
+	margin-right: 10px;
+	padding: 5px;
+	float: left;
+}
+/* copyright
+----------------------------------------------------*/
+#globalFooter p.copyright {
+	text-align: center;
+	clear: both;
+}
+
+/*dt,ddでの横並び用
+----------------------------------------------------*/
+.yoko{
+	background-image: url(../img/dl_yoko.png);
+	display: block;
+	background-repeat: repeat-y;
+	background-position: 127px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #eee;
+	border-right-color: #eee;
+	border-bottom-color: #eee;
+	border-left-color: #eee;
+}
+.zeroline{
+	font-size: 1px;
+	line-height: 1px;
+	width: 100%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+dl.yoko dt {
+	float:left;
+	clear:both;
+	width:115px;
+	padding-right: 10px;
+	border-bottom-width: 0px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #eee;
+	border-right-color: #eee;
+	border-bottom-color: #eee;
+	border-left-color: #eee;
+	padding-left: 10px;
+}
+dl.yoko > dd {
+	float:left;
+	width:430px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #eee;
+}
+*+html dl.yoko > dd {
+	float:none;
+}
