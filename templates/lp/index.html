@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Launch your next big idea with our modern platform. Fast, reliable, and beautifully designed."
+    />
+    <title>Starter — Launch Your Next Big Idea</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🚀</text></svg>" />
+    <meta name="view-transition" content="same-origin" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="antialiased">
+    <!-- ── Nav ── -->
+    <nav class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+      <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+        <a href="#" class="text-xl font-bold text-white">
+          <svg class="inline-block w-8 h-8 mr-2 align-middle" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="8" fill="currentColor" fill-opacity="0.2" />
+            <path d="M8 16l6-8 4 6 6-4v12H8z" fill="currentColor" fill-opacity="0.6" />
+          </svg>
+          Starter
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-white/80">
+          <a href="#features" class="hover:text-white transition-colors">Features</a>
+          <a href="#how-it-works" class="hover:text-white transition-colors">How it Works</a>
+          <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+          <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+          <a
+            href="#cta"
+            class="btn-primary rounded-full bg-white/20 px-5 py-2 text-white hover:bg-white/30 transition-colors"
+          >
+            Get Started
+          </a>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-white" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+        <div class="flex flex-col gap-3 text-sm font-medium text-white/80">
+          <a href="#features" class="hover:text-white">Features</a>
+          <a href="#how-it-works" class="hover:text-white">How it Works</a>
+          <a href="#pricing" class="hover:text-white">Pricing</a>
+          <a href="#faq" class="hover:text-white">FAQ</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ── Hero ── -->
+    <section id="hero" class="hero-gradient relative min-h-screen flex items-center overflow-hidden">
+      <div class="absolute inset-0 opacity-20">
+        <svg class="w-full h-full" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice">
+          <circle cx="200" cy="300" r="300" fill="white" fill-opacity="0.05" />
+          <circle cx="1200" cy="600" r="400" fill="white" fill-opacity="0.04" />
+          <circle cx="700" cy="100" r="200" fill="white" fill-opacity="0.06" />
+        </svg>
+      </div>
+      <div class="relative mx-auto max-w-4xl px-6 text-center text-white">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-white/70">
+          The modern platform
+        </p>
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
+          Launch your next<br />
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-cyan-200">
+            big idea
+          </span>
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg text-white/80 leading-relaxed">
+          Build, ship, and scale faster than ever. Our platform gives you everything you
+          need to go from zero to launch in record time.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="#cta"
+            class="btn-primary rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-primary-700 shadow-lg"
+          >
+            Start Free Trial
+          </a>
+          <a
+            href="#how-it-works"
+            class="glass rounded-full px-8 py-3.5 text-sm font-semibold text-white"
+          >
+            See How it Works &darr;
+          </a>
+        </div>
+        <div class="mt-16 flex items-center justify-center gap-12 text-white/60 text-sm">
+          <div><span class="block text-3xl font-bold text-white" data-count="10000" data-suffix="+">0</span> Users</div>
+          <div><span class="block text-3xl font-bold text-white" data-count="99" data-suffix="%">0</span> Uptime</div>
+          <div><span class="block text-3xl font-bold text-white" data-count="150" data-suffix="+">0</span> Countries</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Features ── -->
+    <section id="features" class="py-24 lg:py-32 bg-white dark:bg-slate-900">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center animate-on-scroll">
+          <p class="text-sm font-semibold uppercase tracking-widest text-primary-500">Features</p>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-bold tracking-tight">Everything you need to succeed</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-text-muted dark:text-text-dark-muted">
+            Powerful tools designed to help you build, manage, and grow your product with confidence.
+          </p>
+        </div>
+        <div class="features-grid mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Feature 1 -->
+          <div class="feature-card card-hover animate-on-scroll rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-8">
+            <div class="icon-wrapper flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100 dark:bg-primary-900/40">
+              <svg class="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold">Lightning Fast</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              Optimized for speed at every level. Sub-second load times and instant interactions that delight users.
+            </p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="feature-card card-hover animate-on-scroll rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-8">
+            <div class="icon-wrapper flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100 dark:bg-primary-900/40">
+              <svg class="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold">Secure by Default</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              Enterprise-grade security built in from day one. End-to-end encryption and compliance ready.
+            </p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="feature-card card-hover animate-on-scroll rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-8">
+            <div class="icon-wrapper flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100 dark:bg-primary-900/40">
+              <svg class="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm10 0a1 1 0 011-1h4a1 1 0 011 1v6a1 1 0 01-1 1h-4a1 1 0 01-1-1v-6z" />
+              </svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold">Flexible Layout</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              Adapt to any screen, any device. Responsive design that works beautifully everywhere.
+            </p>
+          </div>
+          <!-- Feature 4 -->
+          <div class="feature-card card-hover animate-on-scroll rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-8">
+            <div class="icon-wrapper flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100 dark:bg-primary-900/40">
+              <svg class="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold">Real-time Analytics</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              Track every metric that matters. Beautiful dashboards with actionable insights in real time.
+            </p>
+          </div>
+          <!-- Feature 5 -->
+          <div class="feature-card card-hover animate-on-scroll rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-8">
+            <div class="icon-wrapper flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100 dark:bg-primary-900/40">
+              <svg class="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold">Team Collaboration</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              Work together seamlessly. Shared workspaces, permissions, and real-time collaboration tools.
+            </p>
+          </div>
+          <!-- Feature 6 -->
+          <div class="feature-card card-hover animate-on-scroll rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-8">
+            <div class="icon-wrapper flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100 dark:bg-primary-900/40">
+              <svg class="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold">Auto Updates</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              Always up to date. Automatic updates ensure you have the latest features and security patches.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── How it Works ── -->
+    <section id="how-it-works" class="py-24 lg:py-32 bg-surface-alt dark:bg-surface-dark-alt">
+      <div class="mx-auto max-w-4xl px-6">
+        <div class="text-center animate-on-scroll">
+          <p class="text-sm font-semibold uppercase tracking-widest text-primary-500">How it works</p>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-bold tracking-tight">Three simple steps</h2>
+          <p class="mx-auto mt-4 max-w-xl text-text-muted dark:text-text-dark-muted">
+            Get up and running in minutes, not weeks.
+          </p>
+        </div>
+        <div class="mt-16 space-y-16">
+          <!-- Step 1 -->
+          <div class="flex flex-col md:flex-row items-center gap-8 animate-slide-left">
+            <div class="flex-shrink-0 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-white text-2xl font-bold shadow-lg">
+              1
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">Create your account</h3>
+              <p class="mt-2 text-text-muted dark:text-text-dark-muted leading-relaxed">
+                Sign up in seconds with just your email. No credit card required. Start exploring immediately with our generous free tier.
+              </p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex flex-col md:flex-row items-center gap-8 animate-slide-right">
+            <div class="flex-shrink-0 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-white text-2xl font-bold shadow-lg">
+              2
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">Configure your workspace</h3>
+              <p class="mt-2 text-text-muted dark:text-text-dark-muted leading-relaxed">
+                Set up your project in minutes with our guided wizard. Import existing data or start fresh — it's up to you.
+              </p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex flex-col md:flex-row items-center gap-8 animate-slide-left">
+            <div class="flex-shrink-0 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-white text-2xl font-bold shadow-lg">
+              3
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">Launch and grow</h3>
+              <p class="mt-2 text-text-muted dark:text-text-dark-muted leading-relaxed">
+                Go live with confidence. Monitor your metrics, iterate fast, and scale effortlessly as your audience grows.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Pricing ── -->
+    <section id="pricing" class="py-24 lg:py-32 bg-white dark:bg-slate-900">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center animate-on-scroll">
+          <p class="text-sm font-semibold uppercase tracking-widest text-primary-500">Pricing</p>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-bold tracking-tight">Simple, transparent pricing</h2>
+          <p class="mx-auto mt-4 max-w-xl text-text-muted dark:text-text-dark-muted">
+            No hidden fees. No surprises. Pick the plan that fits your needs.
+          </p>
+        </div>
+        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-center">
+          <!-- Starter -->
+          <div class="animate-scale-on-scroll card-hover rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-8">
+            <h3 class="text-lg font-semibold">Starter</h3>
+            <p class="mt-1 text-sm text-text-muted dark:text-text-dark-muted">For individuals getting started</p>
+            <p class="mt-6"><span class="text-4xl font-bold">$0</span><span class="text-text-muted dark:text-text-dark-muted">/month</span></p>
+            <ul class="mt-8 space-y-3 text-sm">
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> Up to 3 projects</li>
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> 1 GB storage</li>
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> Community support</li>
+            </ul>
+            <a href="#cta" class="mt-8 block rounded-full border-2 border-primary-500 py-3 text-center text-sm font-semibold text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
+              Get Started
+            </a>
+          </div>
+          <!-- Pro (Popular) -->
+          <div class="animate-scale-on-scroll pricing-popular card-hover rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-8">
+            <div class="mb-4 inline-block rounded-full bg-primary-500 px-3 py-1 text-xs font-semibold text-white">
+              Most Popular
+            </div>
+            <h3 class="text-lg font-semibold">Pro</h3>
+            <p class="mt-1 text-sm text-text-muted dark:text-text-dark-muted">For growing teams</p>
+            <p class="mt-6"><span class="text-4xl font-bold">$29</span><span class="text-text-muted dark:text-text-dark-muted">/month</span></p>
+            <ul class="mt-8 space-y-3 text-sm">
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> Unlimited projects</li>
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> 100 GB storage</li>
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> Priority support</li>
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> Advanced analytics</li>
+            </ul>
+            <a href="#cta" class="btn-primary mt-8 block rounded-full bg-primary-600 py-3 text-center text-sm font-semibold text-white">
+              Start Free Trial
+            </a>
+          </div>
+          <!-- Enterprise -->
+          <div class="animate-scale-on-scroll card-hover rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-8">
+            <h3 class="text-lg font-semibold">Enterprise</h3>
+            <p class="mt-1 text-sm text-text-muted dark:text-text-dark-muted">For large organizations</p>
+            <p class="mt-6"><span class="text-4xl font-bold">$99</span><span class="text-text-muted dark:text-text-dark-muted">/month</span></p>
+            <ul class="mt-8 space-y-3 text-sm">
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> Everything in Pro</li>
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> Unlimited storage</li>
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> Dedicated support</li>
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> Custom integrations</li>
+              <li class="flex items-center gap-2"><svg class="h-5 w-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 13l4 4L19 7"/></svg> SLA guarantee</li>
+            </ul>
+            <a href="#cta" class="mt-8 block rounded-full border-2 border-primary-500 py-3 text-center text-sm font-semibold text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors">
+              Contact Sales
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Testimonials ── -->
+    <section id="testimonials" class="py-24 lg:py-32 bg-surface-alt dark:bg-surface-dark-alt">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center animate-on-scroll">
+          <p class="text-sm font-semibold uppercase tracking-widest text-primary-500">Testimonials</p>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-bold tracking-tight">Loved by teams worldwide</h2>
+        </div>
+        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Testimonial 1 -->
+          <div class="animate-on-scroll card-hover rounded-2xl bg-white dark:bg-slate-800 p-8 shadow-sm">
+            <div class="flex gap-1 text-amber-400">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              "This platform completely transformed how we build products. We shipped our MVP in half the time we expected."
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/40 text-sm font-bold text-primary-600">AJ</div>
+              <div>
+                <p class="text-sm font-semibold">Alex Johnson</p>
+                <p class="text-xs text-text-muted dark:text-text-dark-muted">CTO, TechCo</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="animate-on-scroll card-hover rounded-2xl bg-white dark:bg-slate-800 p-8 shadow-sm">
+            <div class="flex gap-1 text-amber-400">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              "The best developer experience I've had in years. Clean APIs, great docs, and a team that actually listens to feedback."
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-sm font-bold text-emerald-600">SK</div>
+              <div>
+                <p class="text-sm font-semibold">Sarah Kim</p>
+                <p class="text-xs text-text-muted dark:text-text-dark-muted">Lead Developer, BuildFast</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="animate-on-scroll card-hover rounded-2xl bg-white dark:bg-slate-800 p-8 shadow-sm">
+            <div class="flex gap-1 text-amber-400">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.176 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              "We migrated from three different tools to this one platform. Simplified our stack and saved thousands per month."
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-violet-100 dark:bg-violet-900/40 text-sm font-bold text-violet-600">MR</div>
+              <div>
+                <p class="text-sm font-semibold">Marcus Rivera</p>
+                <p class="text-xs text-text-muted dark:text-text-dark-muted">Founder, LaunchPad</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section id="faq" class="py-24 lg:py-32 bg-white dark:bg-slate-900">
+      <div class="mx-auto max-w-3xl px-6">
+        <div class="text-center animate-on-scroll">
+          <p class="text-sm font-semibold uppercase tracking-widest text-primary-500">FAQ</p>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-bold tracking-tight">Frequently asked questions</h2>
+        </div>
+        <div class="mt-12 space-y-4">
+          <details class="animate-on-scroll rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-6 group">
+            <summary class="flex items-center justify-between font-semibold">
+              How do I get started?
+              <svg class="chevron h-5 w-5 text-text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="details-content mt-4 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              Sign up for a free account and follow our quick-start guide. You'll be up and running in under five minutes. No credit card required.
+            </div>
+          </details>
+          <details class="animate-on-scroll rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-6 group">
+            <summary class="flex items-center justify-between font-semibold">
+              Can I switch plans later?
+              <svg class="chevron h-5 w-5 text-text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="details-content mt-4 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              Absolutely. You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate the difference.
+            </div>
+          </details>
+          <details class="animate-on-scroll rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-6 group">
+            <summary class="flex items-center justify-between font-semibold">
+              Is there a free trial?
+              <svg class="chevron h-5 w-5 text-text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="details-content mt-4 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              Yes! All paid plans come with a 14-day free trial. You can explore every feature before committing. No credit card needed to start.
+            </div>
+          </details>
+          <details class="animate-on-scroll rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-6 group">
+            <summary class="flex items-center justify-between font-semibold">
+              What kind of support do you offer?
+              <svg class="chevron h-5 w-5 text-text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="details-content mt-4 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              Free plans get community support. Pro plans include priority email support with a 24-hour response time. Enterprise plans get a dedicated account manager and phone support.
+            </div>
+          </details>
+          <details class="animate-on-scroll rounded-2xl bg-surface-alt dark:bg-surface-dark-alt p-6 group">
+            <summary class="flex items-center justify-between font-semibold">
+              Can I cancel anytime?
+              <svg class="chevron h-5 w-5 text-text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="details-content mt-4 text-sm leading-relaxed text-text-muted dark:text-text-dark-muted">
+              Yes. No contracts, no cancellation fees. You can cancel your subscription at any time and continue using the service until the end of your billing period.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section id="cta" class="hero-gradient py-24 lg:py-32">
+      <div class="mx-auto max-w-3xl px-6 text-center text-white">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight animate-on-scroll">
+          Ready to get started?
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg text-white/80 animate-on-scroll">
+          Join thousands of teams already building with Starter. Start your free trial today — no credit card required.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-on-scroll">
+          <a
+            href="#"
+            class="btn-primary rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-primary-700 shadow-lg"
+          >
+            Start Free Trial
+          </a>
+          <a
+            href="#"
+            class="glass rounded-full px-8 py-3.5 text-sm font-semibold text-white"
+          >
+            Talk to Sales
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="bg-slate-900 py-16 text-slate-400">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Product</h4>
+            <ul class="mt-4 space-y-2 text-sm">
+              <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+              <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Integrations</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Changelog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Company</h4>
+            <ul class="mt-4 space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Resources</h4>
+            <ul class="mt-4 space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Guides</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">API Reference</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Community</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold uppercase tracking-wider text-white">Legal</h4>
+            <ul class="mt-4 space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-12 border-t border-slate-800 pt-8 text-center text-sm">
+          <p>&copy; 2026 Starter. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

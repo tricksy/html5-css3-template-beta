@@ -1,0 +1,298 @@
+@import "tailwindcss";
+
+/* ── Custom Theme ── */
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+
+  --color-surface: #ffffff;
+  --color-surface-alt: #f8fafc;
+  --color-surface-dark: #0f172a;
+  --color-surface-dark-alt: #1e293b;
+
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-dark: #f1f5f9;
+  --color-text-dark-muted: #94a3b8;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-optical-sizing: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--color-surface-dark);
+    color: var(--color-text-dark);
+  }
+}
+
+/* ── Variable Font ── */
+@font-face {
+  font-family: "Inter";
+  src: url("https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcviYwY.woff2")
+    format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* ── Scroll-driven Animations ── */
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-on-scroll {
+  animation: fade-slide-up linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
+}
+
+.animate-scale-on-scroll {
+  animation: fade-scale-in linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
+}
+
+.animate-slide-left {
+  animation: slide-in-left linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
+}
+
+.animate-slide-right {
+  animation: slide-in-right linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
+}
+
+/* ── Hero gradient animation ── */
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-600),
+    #7c3aed,
+    var(--color-primary-500),
+    #06b6d4
+  );
+  background-size: 300% 300%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* ── Glassmorphism ── */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ── Button micro-interactions ── */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ── Card hover ── */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-hover:hover {
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* ── Pricing highlight ── */
+.pricing-popular {
+  position: relative;
+  border: 2px solid var(--color-primary-500);
+  transform: scale(1.05);
+}
+
+/* ── FAQ accordion ── */
+details summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary .chevron {
+  transition: transform 0.3s ease;
+}
+
+details[open] summary .chevron {
+  transform: rotate(180deg);
+}
+
+details[open] .details-content {
+  animation: accordion-open 0.3s ease forwards;
+}
+
+@keyframes accordion-open {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+/* ── Container queries for feature cards ── */
+.features-grid {
+  container-type: inline-size;
+}
+
+@container (max-width: 640px) {
+  .feature-card {
+    text-align: center;
+  }
+  .feature-card .icon-wrapper {
+    margin-inline: auto;
+  }
+}
+
+/* ── Step connector line ── */
+.step-connector {
+  position: relative;
+}
+
+.step-connector::after {
+  content: "";
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  width: 2px;
+  height: calc(100% - 3rem);
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary-300),
+    var(--color-primary-500)
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  .step-connector::after {
+    background: linear-gradient(
+      to bottom,
+      var(--color-primary-700),
+      var(--color-primary-500)
+    );
+  }
+}
+
+/* ── Smooth nav background ── */
+.nav-scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-scrolled {
+    background: rgba(15, 23, 42, 0.9);
+  }
+}

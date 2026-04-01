@@ -1,0 +1,13 @@
+# HTML5/CSS3 Template Collection
+
+A collection of web templates showcasing modern front-end techniques.
+
+## Templates
+
+### `/templates/lp/` — Modern Landing Page
+A full-featured SaaS landing page built with Vite + Tailwind CSS v4.
+Uses CSS Scroll-driven Animations, View Transitions API, Container Queries,
+and variable fonts. See `templates/lp/README.md` for details.
+
+### Legacy Template (root files)
+The original HTML5/CSS3 template (index.html, css/, js/, img/).
