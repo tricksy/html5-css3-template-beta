@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="山田太郎 — Webデザイナー / フロントエンドエンジニアのポートフォリオサイト"
+    />
+    <title>山田太郎 — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=optional" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>&#x1F3A8;</text></svg>" />
+    <meta name="view-transition" content="same-origin" />
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      (function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.body?document.body.setAttribute("data-theme",t):document.addEventListener("DOMContentLoaded",function(){document.body.setAttribute("data-theme",t)})})();
+    </script>
+  </head>
+  <body class="antialiased">
+    <!-- ── Scroll Progress Bar ── -->
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- ── Nav ── -->
+    <nav class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+      <div class="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
+        <a href="#" class="text-lg font-bold text-white dark:text-white">
+          T.Y
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-white/80">
+          <a href="#about" class="hover:text-white transition-colors">About</a>
+          <a href="#works" class="hover:text-white transition-colors">Works</a>
+          <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
+            <svg class="theme-toggle-sun h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="theme-toggle-moon h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+            </svg>
+          </button>
+        </div>
+        <button id="menu-toggle" class="md:hidden text-white" aria-label="メニュー">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+        <div class="flex flex-col gap-3 text-sm font-medium text-white/80">
+          <a href="#about" class="hover:text-white">About</a>
+          <a href="#works" class="hover:text-white">Works</a>
+          <a href="#experience" class="hover:text-white">Experience</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ── Hero ── -->
+    <section id="hero" class="hero-bg min-h-screen flex items-center">
+      <div class="mx-auto max-w-6xl px-6 py-32 grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <div class="order-2 md:order-1">
+          <p class="text-sm font-medium tracking-widest uppercase text-[var(--color-primary-400)] mb-4">Web Designer &amp; Frontend Engineer</p>
+          <h1 class="text-4xl md:text-6xl font-black leading-tight text-white mb-6">
+            山田 太郎
+          </h1>
+          <p class="text-lg text-white/70 leading-relaxed mb-8 max-w-lg">
+            東京を拠点に活動するWebデザイナー / フロントエンドエンジニア。<br/>
+            ミニマルで機能的なデザインと、快適なユーザー体験を追求しています。
+          </p>
+          <div class="flex items-center gap-4">
+            <!-- GitHub -->
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <!-- X / Twitter -->
+            <a href="#" class="social-link" aria-label="X">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <!-- Dribbble -->
+            <a href="#" class="social-link" aria-label="Dribbble">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.375 0 0 5.375 0 12s5.375 12 12 12 12-5.375 12-12S18.625 0 12 0zm7.938 5.563a10.18 10.18 0 012.25 6.375c-.328-.063-3.625-.75-6.938-.328-.063-.187-.125-.375-.25-.563-.25-.562-.5-1.125-.813-1.687 3.688-1.5 5.375-3.688 5.75-4.188zM12 1.813c2.625 0 5.063 1 6.875 2.687-.313.438-1.875 2.5-5.375 3.875-1.688-3.063-3.563-5.625-3.813-5.938A10.3 10.3 0 0112 1.812zm-4 .937c.25.313 2.063 2.875 3.813 5.875-4.813 1.25-9.063 1.25-9.5 1.25A10.2 10.2 0 018 2.75zM1.812 12v-.313c.438.013 5.438.063 10.563-1.437.313.562.563 1.125.813 1.687-.125.063-.313.063-.438.125-5.375 1.75-8.25 6.5-8.562 7.063a10.15 10.15 0 01-2.375-7.125zm10.188 10.188c-2.375 0-4.563-.813-6.313-2.188.25-.5 2.375-4.625 8.25-6.75l.063-.063a38.9 38.9 0 012.187 7.813 10.1 10.1 0 01-4.188.938v.25zm6-1.875a39 39 0 00-2-7.25c3.125-.5 5.875.313 6.25.438a10.2 10.2 0 01-4.25 6.812z"/></svg>
+            </a>
+            <!-- Email -->
+            <a href="#contact" class="social-link" aria-label="Email">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="order-1 md:order-2 flex justify-center">
+          <!-- SVG Avatar Placeholder -->
+          <div class="avatar-ring rounded-full">
+            <svg class="w-48 h-48 md:w-64 md:h-64 rounded-full" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="256" height="256" rx="128" fill="#1e1b4b"/>
+              <circle cx="128" cy="100" r="40" fill="#6366f1" opacity="0.6"/>
+              <ellipse cx="128" cy="190" rx="60" ry="40" fill="#6366f1" opacity="0.4"/>
+              <circle cx="128" cy="100" r="36" fill="#818cf8" opacity="0.3"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── About ── -->
+    <section id="about" class="py-24 md:py-32">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+          <div class="animate-on-scroll">
+            <p class="text-sm font-medium tracking-widest uppercase text-[var(--color-primary-400)] mb-3">About</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">自己紹介</h2>
+            <div class="space-y-4 text-[var(--color-text-dark-muted)] leading-relaxed">
+              <p>
+                2018年からWebデザインとフロントエンド開発に携わっています。
+                企業のコーポレートサイトからSaaSプロダクトのUI設計まで、
+                幅広い領域でデザインと実装の両面を担当してきました。
+              </p>
+              <p>
+                「使いやすさ」と「美しさ」の両立を常に意識し、
+                ユーザーが迷わず目的を達成できるインターフェースを目指しています。
+                パフォーマンスとアクセシビリティも重要な要素として取り組んでいます。
+              </p>
+            </div>
+          </div>
+          <div class="animate-on-scroll">
+            <p class="text-sm font-medium tracking-widest uppercase text-[var(--color-primary-400)] mb-3">Skills</p>
+            <h3 class="text-xl font-bold mb-6">技術スタック</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge">HTML / CSS</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">TypeScript</span>
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">Next.js</span>
+              <span class="skill-badge">Vue.js</span>
+              <span class="skill-badge">Tailwind CSS</span>
+              <span class="skill-badge">Figma</span>
+              <span class="skill-badge">Node.js</span>
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">Git</span>
+              <span class="skill-badge">Docker</span>
+              <span class="skill-badge">AWS</span>
+              <span class="skill-badge">Vercel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Works ── -->
+    <section id="works" class="section-alt py-24 md:py-32">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center mb-12 animate-on-scroll">
+          <p class="text-sm font-medium tracking-widest uppercase text-[var(--color-primary-400)] mb-3">Works</p>
+          <h2 class="text-3xl md:text-4xl font-bold">制作実績</h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex justify-center gap-2 mb-12 flex-wrap">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="web">Web</button>
+          <button class="filter-tab" data-filter="app">App</button>
+          <button class="filter-tab" data-filter="design">Design</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <article class="project-card animate-scale-on-scroll" data-category="web" data-visible="true">
+            <div class="card-thumbnail">
+              <svg class="w-16 h-16" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" opacity="0.3">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg mb-2">ECサイトリニューアル</h3>
+              <p class="text-sm text-[var(--color-text-dark-muted)] mb-4">オーガニック食品ブランドのECサイトをフルリニューアル。コンバージョン率が150%向上。</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Next.js</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Stripe</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Figma</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="project-card animate-scale-on-scroll" data-category="app" data-visible="true">
+            <div class="card-thumbnail">
+              <svg class="w-16 h-16" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" opacity="0.3">
+                <rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="18" r="1"/>
+              </svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg mb-2">タスク管理アプリ</h3>
+              <p class="text-sm text-[var(--color-text-dark-muted)] mb-4">チーム向けタスク管理アプリのUI設計と実装。リアルタイム同期とオフライン対応。</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">React Native</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Firebase</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="project-card animate-scale-on-scroll" data-category="design" data-visible="true">
+            <div class="card-thumbnail">
+              <svg class="w-16 h-16" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" opacity="0.3">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg mb-2">デザインシステム構築</h3>
+              <p class="text-sm text-[var(--color-text-dark-muted)] mb-4">SaaS企業のデザインシステムをゼロから設計。コンポーネントライブラリとスタイルガイドを整備。</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Figma</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Storybook</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="project-card animate-scale-on-scroll" data-category="web" data-visible="true">
+            <div class="card-thumbnail">
+              <svg class="w-16 h-16" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" opacity="0.3">
+                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+              </svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg mb-2">コーポレートサイト</h3>
+              <p class="text-sm text-[var(--color-text-dark-muted)] mb-4">IT企業のコーポレートサイトをモダンなデザインでリニューアル。Lighthouse100点を達成。</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Astro</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Tailwind</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="project-card animate-scale-on-scroll" data-category="app" data-visible="true">
+            <div class="card-thumbnail">
+              <svg class="w-16 h-16" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" opacity="0.3">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg mb-2">不動産検索アプリ</h3>
+              <p class="text-sm text-[var(--color-text-dark-muted)] mb-4">地図ベースの不動産検索アプリ。フィルタリングUIとインタラクティブマップを実装。</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Vue.js</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Mapbox</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="project-card animate-scale-on-scroll" data-category="design" data-visible="true">
+            <div class="card-thumbnail">
+              <svg class="w-16 h-16" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" opacity="0.3">
+                <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+              </svg>
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-lg mb-2">ブランドアイデンティティ</h3>
+              <p class="text-sm text-[var(--color-text-dark-muted)] mb-4">スタートアップのブランドアイデンティティを設計。ロゴ・カラー・タイポグラフィを統一。</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Illustrator</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-[rgba(99,102,241,0.1)] text-[var(--color-primary-400)]">Figma</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Experience / Timeline ── -->
+    <section id="experience" class="py-24 md:py-32">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="text-center mb-16 animate-on-scroll">
+          <p class="text-sm font-medium tracking-widest uppercase text-[var(--color-primary-400)] mb-3">Experience</p>
+          <h2 class="text-3xl md:text-4xl font-bold">経歴</h2>
+        </div>
+
+        <div class="max-w-2xl mx-auto">
+          <div class="timeline">
+            <!-- Item 1 -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="timeline-dot"></div>
+              <div>
+                <p class="text-sm font-medium text-[var(--color-primary-400)] mb-1">2022年4月 — 現在</p>
+                <h3 class="text-lg font-bold mb-1">シニアフロントエンドエンジニア</h3>
+                <p class="text-sm font-medium text-[var(--color-text-dark-muted)] mb-2">株式会社テックスタジオ</p>
+                <p class="text-sm text-[var(--color-text-dark-muted)] leading-relaxed">
+                  SaaSプロダクトのフロントエンド開発リード。デザインシステム構築、パフォーマンス最適化、チームメンバーの技術指導を担当。
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="timeline-dot"></div>
+              <div>
+                <p class="text-sm font-medium text-[var(--color-primary-400)] mb-1">2020年1月 — 2022年3月</p>
+                <h3 class="text-lg font-bold mb-1">Webデザイナー / エンジニア</h3>
+                <p class="text-sm font-medium text-[var(--color-text-dark-muted)] mb-2">デジタルクリエイティブ合同会社</p>
+                <p class="text-sm text-[var(--color-text-dark-muted)] leading-relaxed">
+                  クライアントワークを中心に、コーポレートサイト・LP・ECサイトのデザインと実装を担当。年間20サイト以上を手がける。
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="timeline-item animate-on-scroll">
+              <div class="timeline-dot"></div>
+              <div>
+                <p class="text-sm font-medium text-[var(--color-primary-400)] mb-1">2018年4月 — 2019年12月</p>
+                <h3 class="text-lg font-bold mb-1">Webデザイナー（ジュニア）</h3>
+                <p class="text-sm font-medium text-[var(--color-text-dark-muted)] mb-2">株式会社クリエイトワークス</p>
+                <p class="text-sm text-[var(--color-text-dark-muted)] leading-relaxed">
+                  Webデザインの基礎を習得。バナー制作からLP制作まで、段階的にスキルアップ。HTML/CSSコーディングも並行して習得。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section id="contact" class="section-alt py-24 md:py-32">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="max-w-xl mx-auto">
+          <div class="text-center mb-12 animate-on-scroll">
+            <p class="text-sm font-medium tracking-widest uppercase text-[var(--color-primary-400)] mb-3">Contact</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">お問い合わせ</h2>
+            <p class="text-[var(--color-text-dark-muted)]">
+              お仕事のご依頼やご相談はこちらからお気軽にどうぞ。
+            </p>
+          </div>
+
+          <form id="contact-form" class="space-y-5 animate-on-scroll">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-2">お名前</label>
+              <input type="text" id="name" name="name" required class="form-input" placeholder="山田 花子" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">メールアドレス</label>
+              <input type="email" id="email" name="email" required class="form-input" placeholder="hello@example.com" />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium mb-2">メッセージ</label>
+              <textarea id="message" name="message" rows="5" required class="form-input resize-none" placeholder="ご依頼内容をお聞かせください"></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full">
+              送信する
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </form>
+
+          <!-- Social links below form -->
+          <div class="flex justify-center gap-4 mt-10">
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="X">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Dribbble">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.375 0 0 5.375 0 12s5.375 12 12 12 12-5.375 12-12S18.625 0 12 0zm7.938 5.563a10.18 10.18 0 012.25 6.375c-.328-.063-3.625-.75-6.938-.328-.063-.187-.125-.375-.25-.563-.25-.562-.5-1.125-.813-1.687 3.688-1.5 5.375-3.688 5.75-4.188zM12 1.813c2.625 0 5.063 1 6.875 2.687-.313.438-1.875 2.5-5.375 3.875-1.688-3.063-3.563-5.625-3.813-5.938A10.3 10.3 0 0112 1.812zm-4 .937c.25.313 2.063 2.875 3.813 5.875-4.813 1.25-9.063 1.25-9.5 1.25A10.2 10.2 0 018 2.75zM1.812 12v-.313c.438.013 5.438.063 10.563-1.437.313.562.563 1.125.813 1.687-.125.063-.313.063-.438.125-5.375 1.75-8.25 6.5-8.562 7.063a10.15 10.15 0 01-2.375-7.125zm10.188 10.188c-2.375 0-4.563-.813-6.313-2.188.25-.5 2.375-4.625 8.25-6.75l.063-.063a38.9 38.9 0 012.187 7.813 10.1 10.1 0 01-4.188.938v.25zm6-1.875a39 39 0 00-2-7.25c3.125-.5 5.875.313 6.25.438a10.2 10.2 0 01-4.25 6.812z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="footer-border py-8">
+      <div class="mx-auto max-w-6xl px-6 text-center">
+        <p class="text-sm text-[var(--color-text-dark-muted)]">
+          &copy; 2024 Taro Yamada. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

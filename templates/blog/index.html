@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TechNote - テクノロジー、デザイン、ビジネスの最新情報をお届けするブログメディア" />
+    <title>TechNote - テクノロジーとデザインのブログ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=optional" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>&#x1f4dd;</text></svg>" />
+    <meta name="view-transition" content="same-origin" />
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      (function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.body?document.body.setAttribute("data-theme",t):document.addEventListener("DOMContentLoaded",function(){document.body.setAttribute("data-theme",t)})})();
+    </script>
+  </head>
+  <body class="antialiased">
+    <!-- ── Scroll Progress Bar ── -->
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- ── Nav Sentinel ── -->
+    <div id="nav-sentinel" class="h-1"></div>
+
+    <!-- ── Header / Nav ── -->
+    <nav class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/0">
+      <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+        <a href="#" data-back-home class="text-xl font-bold text-text dark:text-text-dark">
+          <span class="text-primary-600">Tech</span>Note
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#" data-section="home" class="text-sm font-medium text-text-muted hover:text-primary-600 dark:text-text-dark-muted dark:hover:text-primary-400 transition-colors">ホーム</a>
+          <a href="#" data-section="home" class="text-sm font-medium text-text-muted hover:text-primary-600 dark:text-text-dark-muted dark:hover:text-primary-400 transition-colors">カテゴリ</a>
+          <a href="#" data-section="article-view" class="text-sm font-medium text-text-muted hover:text-primary-600 dark:text-text-dark-muted dark:hover:text-primary-400 transition-colors">執筆者について</a>
+          <button id="search-toggle" class="text-text-muted hover:text-primary-600 dark:text-text-dark-muted dark:hover:text-primary-400 transition-colors" aria-label="検索">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-width="2" d="m21 21-4.35-4.35"/></svg>
+          </button>
+          <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切替">
+            <svg class="theme-toggle-sun w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" stroke-width="2" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="theme-toggle-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="menu-toggle" class="md:hidden text-text dark:text-text-dark" aria-label="メニュー">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+
+      <!-- Search Bar (hidden by default) -->
+      <div id="search-bar" class="hidden border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark px-6 py-3">
+        <div class="mx-auto max-w-2xl">
+          <input type="search" placeholder="記事を検索..." class="w-full px-4 py-2 rounded-lg bg-surface-alt dark:bg-surface-dark-alt text-text dark:text-text-dark border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-400" />
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 px-6 py-4 space-y-3">
+        <a href="#" data-section="home" class="block text-sm font-medium text-text-muted dark:text-text-dark-muted">ホーム</a>
+        <a href="#" data-section="home" class="block text-sm font-medium text-text-muted dark:text-text-dark-muted">カテゴリ</a>
+        <a href="#" data-section="article-view" class="block text-sm font-medium text-text-muted dark:text-text-dark-muted">執筆者について</a>
+      </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ── HOME SECTION ── -->
+    <!-- ══════════════════════════════════════════ -->
+    <div id="home" class="blog-section active">
+
+      <!-- ── Featured Article ── -->
+      <section class="pt-24 pb-12 px-6">
+        <div class="mx-auto max-w-7xl">
+          <a href="#" data-show-article class="group block relative overflow-hidden rounded-2xl bg-surface-alt dark:bg-surface-dark-alt card-hover">
+            <div class="grid md:grid-cols-2 gap-0">
+              <!-- Thumbnail SVG -->
+              <div class="aspect-video md:aspect-auto overflow-hidden">
+                <svg class="w-full h-full card-thumbnail" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="feat-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#3b82f6"/>
+                      <stop offset="100%" stop-color="#7c3aed"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="600" height="400" fill="url(#feat-bg)"/>
+                  <circle cx="150" cy="120" r="80" fill="rgba(255,255,255,0.1)"/>
+                  <circle cx="450" cy="300" r="120" fill="rgba(255,255,255,0.07)"/>
+                  <rect x="200" y="150" width="200" height="100" rx="12" fill="rgba(255,255,255,0.12)"/>
+                  <polygon points="480,80 520,160 440,160" fill="rgba(255,255,255,0.08)"/>
+                </svg>
+              </div>
+              <!-- Content -->
+              <div class="p-8 md:p-12 flex flex-col justify-center">
+                <span class="inline-block w-fit px-3 py-1 rounded-full text-xs font-bold badge-tech mb-4">テクノロジー</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-text dark:text-text-dark leading-tight">2026年のフロントエンド開発トレンド：知っておくべき10の技術</h2>
+                <p class="text-text-muted dark:text-text-dark-muted mb-6 line-clamp-3">Webプラットフォームの進化が加速する中、開発者が押さえておくべき最新技術とベストプラクティスを徹底解説。CSS Scroll-driven AnimationsからView Transitionsまで。</p>
+                <div class="flex items-center gap-3 text-sm text-text-muted dark:text-text-dark-muted">
+                  <!-- Author avatar -->
+                  <svg class="w-8 h-8 rounded-full" viewBox="0 0 32 32"><rect width="32" height="32" rx="16" fill="#e2e8f0"/><circle cx="16" cy="12" r="5" fill="#94a3b8"/><ellipse cx="16" cy="28" rx="10" ry="8" fill="#94a3b8"/></svg>
+                  <span>田中 太郎</span>
+                  <span class="text-gray-300 dark:text-gray-600">|</span>
+                  <span>2026年3月28日</span>
+                  <span class="text-gray-300 dark:text-gray-600">|</span>
+                  <span>12分で読めます</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ── Article Grid + Sidebar ── -->
+      <section class="pb-20 px-6">
+        <div class="mx-auto max-w-7xl grid lg:grid-cols-3 gap-10">
+
+          <!-- Article Grid (2 cols on md, spans 2 cols on lg) -->
+          <div class="lg:col-span-2 grid sm:grid-cols-2 gap-6">
+
+            <!-- Card 1 -->
+            <a href="#" data-show-article class="group card-hover rounded-xl overflow-hidden bg-white dark:bg-surface-dark-alt shadow-sm border border-gray-100 dark:border-gray-800 animate-on-scroll">
+              <div class="aspect-video overflow-hidden">
+                <svg class="w-full h-full card-thumbnail" viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="225" fill="#ec4899"/>
+                  <circle cx="100" cy="60" r="50" fill="rgba(255,255,255,0.12)"/>
+                  <circle cx="300" cy="170" r="70" fill="rgba(255,255,255,0.08)"/>
+                  <rect x="150" y="80" width="120" height="80" rx="8" fill="rgba(255,255,255,0.1)"/>
+                </svg>
+              </div>
+              <div class="p-5">
+                <span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold badge-design mb-3">デザイン</span>
+                <h3 class="font-bold text-text dark:text-text-dark mb-2 line-clamp-2">ミニマルデザインの実践ガイド：余白が語るストーリー</h3>
+                <p class="text-sm text-text-muted dark:text-text-dark-muted line-clamp-2 mb-4">情報を減らすのではなく、本質を浮かび上がらせる。プロが実践するミニマルデザインの具体的手法。</p>
+                <div class="flex items-center gap-2 text-xs text-text-muted dark:text-text-dark-muted">
+                  <svg class="w-5 h-5 rounded-full shrink-0" viewBox="0 0 32 32"><rect width="32" height="32" rx="16" fill="#fde68a"/><circle cx="16" cy="12" r="5" fill="#b45309"/><ellipse cx="16" cy="28" rx="10" ry="8" fill="#b45309"/></svg>
+                  <span>佐藤 花子</span>
+                  <span class="ml-auto">3月25日 &middot; 8分</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="#" data-show-article class="group card-hover rounded-xl overflow-hidden bg-white dark:bg-surface-dark-alt shadow-sm border border-gray-100 dark:border-gray-800 animate-on-scroll">
+              <div class="aspect-video overflow-hidden">
+                <svg class="w-full h-full card-thumbnail" viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="225" fill="#f59e0b"/>
+                  <polygon points="200,30 350,180 50,180" fill="rgba(255,255,255,0.12)"/>
+                  <circle cx="320" cy="60" r="40" fill="rgba(255,255,255,0.1)"/>
+                  <rect x="40" y="40" width="60" height="60" rx="8" fill="rgba(255,255,255,0.08)"/>
+                </svg>
+              </div>
+              <div class="p-5">
+                <span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold badge-business mb-3">ビジネス</span>
+                <h3 class="font-bold text-text dark:text-text-dark mb-2 line-clamp-2">リモートワーク時代のチームマネジメント術</h3>
+                <p class="text-sm text-text-muted dark:text-text-dark-muted line-clamp-2 mb-4">分散チームの生産性を最大化するための実践的フレームワークと、コミュニケーション設計の考え方。</p>
+                <div class="flex items-center gap-2 text-xs text-text-muted dark:text-text-dark-muted">
+                  <svg class="w-5 h-5 rounded-full shrink-0" viewBox="0 0 32 32"><rect width="32" height="32" rx="16" fill="#d1fae5"/><circle cx="16" cy="12" r="5" fill="#059669"/><ellipse cx="16" cy="28" rx="10" ry="8" fill="#059669"/></svg>
+                  <span>鈴木 一郎</span>
+                  <span class="ml-auto">3月22日 &middot; 10分</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="#" data-show-article class="group card-hover rounded-xl overflow-hidden bg-white dark:bg-surface-dark-alt shadow-sm border border-gray-100 dark:border-gray-800 animate-on-scroll">
+              <div class="aspect-video overflow-hidden">
+                <svg class="w-full h-full card-thumbnail" viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="225" fill="#10b981"/>
+                  <circle cx="200" cy="112" r="80" fill="rgba(255,255,255,0.1)"/>
+                  <circle cx="200" cy="112" r="50" fill="rgba(255,255,255,0.08)"/>
+                  <circle cx="200" cy="112" r="20" fill="rgba(255,255,255,0.12)"/>
+                </svg>
+              </div>
+              <div class="p-5">
+                <span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold badge-lifestyle mb-3">ライフスタイル</span>
+                <h3 class="font-bold text-text dark:text-text-dark mb-2 line-clamp-2">エンジニアのための朝活習慣：生産性を2倍にする方法</h3>
+                <p class="text-sm text-text-muted dark:text-text-dark-muted line-clamp-2 mb-4">朝の1時間が1日の質を決める。エンジニアに特化した朝活ルーティンと、その科学的根拠。</p>
+                <div class="flex items-center gap-2 text-xs text-text-muted dark:text-text-dark-muted">
+                  <svg class="w-5 h-5 rounded-full shrink-0" viewBox="0 0 32 32"><rect width="32" height="32" rx="16" fill="#e0e7ff"/><circle cx="16" cy="12" r="5" fill="#4f46e5"/><ellipse cx="16" cy="28" rx="10" ry="8" fill="#4f46e5"/></svg>
+                  <span>山田 美咲</span>
+                  <span class="ml-auto">3月20日 &middot; 6分</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 4 -->
+            <a href="#" data-show-article class="group card-hover rounded-xl overflow-hidden bg-white dark:bg-surface-dark-alt shadow-sm border border-gray-100 dark:border-gray-800 animate-on-scroll">
+              <div class="aspect-video overflow-hidden">
+                <svg class="w-full h-full card-thumbnail" viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="225" fill="#3b82f6"/>
+                  <rect x="50" y="40" width="300" height="20" rx="4" fill="rgba(255,255,255,0.15)"/>
+                  <rect x="50" y="80" width="240" height="12" rx="3" fill="rgba(255,255,255,0.08)"/>
+                  <rect x="50" y="110" width="280" height="12" rx="3" fill="rgba(255,255,255,0.08)"/>
+                  <rect x="50" y="140" width="200" height="12" rx="3" fill="rgba(255,255,255,0.08)"/>
+                  <rect x="50" y="175" width="100" height="30" rx="6" fill="rgba(255,255,255,0.12)"/>
+                </svg>
+              </div>
+              <div class="p-5">
+                <span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold badge-tech mb-3">テクノロジー</span>
+                <h3 class="font-bold text-text dark:text-text-dark mb-2 line-clamp-2">TypeScript 6.0の新機能を完全解説</h3>
+                <p class="text-sm text-text-muted dark:text-text-dark-muted line-clamp-2 mb-4">型推論の進化、新しいユーティリティ型、パフォーマンス改善まで。移行ガイド付き。</p>
+                <div class="flex items-center gap-2 text-xs text-text-muted dark:text-text-dark-muted">
+                  <svg class="w-5 h-5 rounded-full shrink-0" viewBox="0 0 32 32"><rect width="32" height="32" rx="16" fill="#e2e8f0"/><circle cx="16" cy="12" r="5" fill="#94a3b8"/><ellipse cx="16" cy="28" rx="10" ry="8" fill="#94a3b8"/></svg>
+                  <span>田中 太郎</span>
+                  <span class="ml-auto">3月18日 &middot; 15分</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 5 -->
+            <a href="#" data-show-article class="group card-hover rounded-xl overflow-hidden bg-white dark:bg-surface-dark-alt shadow-sm border border-gray-100 dark:border-gray-800 animate-on-scroll">
+              <div class="aspect-video overflow-hidden">
+                <svg class="w-full h-full card-thumbnail" viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="225" fill="#ec4899"/>
+                  <rect x="60" y="50" width="120" height="120" rx="12" fill="rgba(255,255,255,0.1)" transform="rotate(15 120 110)"/>
+                  <rect x="220" y="60" width="80" height="80" rx="8" fill="rgba(255,255,255,0.08)" transform="rotate(-10 260 100)"/>
+                  <circle cx="330" cy="180" r="30" fill="rgba(255,255,255,0.12)"/>
+                </svg>
+              </div>
+              <div class="p-5">
+                <span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold badge-design mb-3">デザイン</span>
+                <h3 class="font-bold text-text dark:text-text-dark mb-2 line-clamp-2">UIアニメーションの心理学：ユーザーを導くモーション設計</h3>
+                <p class="text-sm text-text-muted dark:text-text-dark-muted line-clamp-2 mb-4">アニメーションは装飾ではない。認知負荷を下げ、ユーザーを目的地に導くための設計原則。</p>
+                <div class="flex items-center gap-2 text-xs text-text-muted dark:text-text-dark-muted">
+                  <svg class="w-5 h-5 rounded-full shrink-0" viewBox="0 0 32 32"><rect width="32" height="32" rx="16" fill="#fde68a"/><circle cx="16" cy="12" r="5" fill="#b45309"/><ellipse cx="16" cy="28" rx="10" ry="8" fill="#b45309"/></svg>
+                  <span>佐藤 花子</span>
+                  <span class="ml-auto">3月15日 &middot; 9分</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 6 -->
+            <a href="#" data-show-article class="group card-hover rounded-xl overflow-hidden bg-white dark:bg-surface-dark-alt shadow-sm border border-gray-100 dark:border-gray-800 animate-on-scroll">
+              <div class="aspect-video overflow-hidden">
+                <svg class="w-full h-full card-thumbnail" viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="225" fill="#f59e0b"/>
+                  <path d="M0 225 L200 50 L400 225 Z" fill="rgba(255,255,255,0.08)"/>
+                  <circle cx="200" cy="90" r="30" fill="rgba(255,255,255,0.15)"/>
+                  <rect x="160" y="150" width="80" height="8" rx="4" fill="rgba(255,255,255,0.1)"/>
+                </svg>
+              </div>
+              <div class="p-5">
+                <span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold badge-business mb-3">ビジネス</span>
+                <h3 class="font-bold text-text dark:text-text-dark mb-2 line-clamp-2">スタートアップのプロダクト戦略：PMFへの最短ルート</h3>
+                <p class="text-sm text-text-muted dark:text-text-dark-muted line-clamp-2 mb-4">限られたリソースで最大のインパクトを出すための、プロダクト・マーケット・フィット達成フレームワーク。</p>
+                <div class="flex items-center gap-2 text-xs text-text-muted dark:text-text-dark-muted">
+                  <svg class="w-5 h-5 rounded-full shrink-0" viewBox="0 0 32 32"><rect width="32" height="32" rx="16" fill="#d1fae5"/><circle cx="16" cy="12" r="5" fill="#059669"/><ellipse cx="16" cy="28" rx="10" ry="8" fill="#059669"/></svg>
+                  <span>鈴木 一郎</span>
+                  <span class="ml-auto">3月12日 &middot; 11分</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- ── Sidebar ── -->
+          <aside class="space-y-8">
+
+            <!-- カテゴリ一覧 -->
+            <div class="rounded-xl bg-white dark:bg-surface-dark-alt border border-gray-100 dark:border-gray-800 p-6 animate-on-scroll">
+              <h3 class="font-bold text-lg mb-4 text-text dark:text-text-dark">カテゴリ</h3>
+              <ul class="space-y-3">
+                <li class="flex items-center justify-between text-sm">
+                  <span class="flex items-center gap-2 text-text dark:text-text-dark">
+                    <span class="w-2 h-2 rounded-full bg-category-tech"></span>テクノロジー
+                  </span>
+                  <span class="text-text-muted dark:text-text-dark-muted text-xs bg-surface-alt dark:bg-surface-dark px-2 py-0.5 rounded-full">24</span>
+                </li>
+                <li class="flex items-center justify-between text-sm">
+                  <span class="flex items-center gap-2 text-text dark:text-text-dark">
+                    <span class="w-2 h-2 rounded-full bg-category-design"></span>デザイン
+                  </span>
+                  <span class="text-text-muted dark:text-text-dark-muted text-xs bg-surface-alt dark:bg-surface-dark px-2 py-0.5 rounded-full">18</span>
+                </li>
+                <li class="flex items-center justify-between text-sm">
+                  <span class="flex items-center gap-2 text-text dark:text-text-dark">
+                    <span class="w-2 h-2 rounded-full bg-category-business"></span>ビジネス
+                  </span>
+                  <span class="text-text-muted dark:text-text-dark-muted text-xs bg-surface-alt dark:bg-surface-dark px-2 py-0.5 rounded-full">15</span>
+                </li>
+                <li class="flex items-center justify-between text-sm">
+                  <span class="flex items-center gap-2 text-text dark:text-text-dark">
+                    <span class="w-2 h-2 rounded-full bg-category-lifestyle"></span>ライフスタイル
+                  </span>
+                  <span class="text-text-muted dark:text-text-dark-muted text-xs bg-surface-alt dark:bg-surface-dark px-2 py-0.5 rounded-full">12</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 人気記事 -->
+            <div class="rounded-xl bg-white dark:bg-surface-dark-alt border border-gray-100 dark:border-gray-800 p-6 animate-on-scroll">
+              <h3 class="font-bold text-lg mb-4 text-text dark:text-text-dark">人気記事</h3>
+              <ol class="space-y-4">
+                <li class="flex gap-3">
+                  <span class="text-2xl font-black text-primary-200 dark:text-primary-800 leading-none">01</span>
+                  <div>
+                    <a href="#" data-show-article class="text-sm font-medium text-text dark:text-text-dark hover:text-primary-600 dark:hover:text-primary-400 line-clamp-2">2026年のフロントエンド開発トレンド</a>
+                    <p class="text-xs text-text-muted dark:text-text-dark-muted mt-1">3,240 views</p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="text-2xl font-black text-primary-200 dark:text-primary-800 leading-none">02</span>
+                  <div>
+                    <a href="#" data-show-article class="text-sm font-medium text-text dark:text-text-dark hover:text-primary-600 dark:hover:text-primary-400 line-clamp-2">TypeScript 6.0の新機能を完全解説</a>
+                    <p class="text-xs text-text-muted dark:text-text-dark-muted mt-1">2,890 views</p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="text-2xl font-black text-primary-200 dark:text-primary-800 leading-none">03</span>
+                  <div>
+                    <a href="#" data-show-article class="text-sm font-medium text-text dark:text-text-dark hover:text-primary-600 dark:hover:text-primary-400 line-clamp-2">ミニマルデザインの実践ガイド</a>
+                    <p class="text-xs text-text-muted dark:text-text-dark-muted mt-1">2,150 views</p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="text-2xl font-black text-primary-200 dark:text-primary-800 leading-none">04</span>
+                  <div>
+                    <a href="#" data-show-article class="text-sm font-medium text-text dark:text-text-dark hover:text-primary-600 dark:hover:text-primary-400 line-clamp-2">リモートワーク時代のチームマネジメント</a>
+                    <p class="text-xs text-text-muted dark:text-text-dark-muted mt-1">1,980 views</p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="text-2xl font-black text-primary-200 dark:text-primary-800 leading-none">05</span>
+                  <div>
+                    <a href="#" data-show-article class="text-sm font-medium text-text dark:text-text-dark hover:text-primary-600 dark:hover:text-primary-400 line-clamp-2">UIアニメーションの心理学</a>
+                    <p class="text-xs text-text-muted dark:text-text-dark-muted mt-1">1,720 views</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <!-- タグクラウド -->
+            <div class="rounded-xl bg-white dark:bg-surface-dark-alt border border-gray-100 dark:border-gray-800 p-6 animate-on-scroll">
+              <h3 class="font-bold text-lg mb-4 text-text dark:text-text-dark">タグ</h3>
+              <div class="tag-cloud flex flex-wrap gap-2">
+                <a href="#" class="px-3 py-1 text-xs rounded-full bg-surface-alt dark:bg-surface-dark text-text-muted dark:text-text-dark-muted border border-gray-200 dark:border-gray-700">JavaScript</a>
+                <a href="#" class="px-3 py-1 text-xs rounded-full bg-surface-alt dark:bg-surface-dark text-text-muted dark:text-text-dark-muted border border-gray-200 dark:border-gray-700">TypeScript</a>
+                <a href="#" class="px-3 py-1 text-xs rounded-full bg-surface-alt dark:bg-surface-dark text-text-muted dark:text-text-dark-muted border border-gray-200 dark:border-gray-700">CSS</a>
+                <a href="#" class="px-3 py-1 text-xs rounded-full bg-surface-alt dark:bg-surface-dark text-text-muted dark:text-text-dark-muted border border-gray-200 dark:border-gray-700">React</a>
+                <a href="#" class="px-3 py-1 text-xs rounded-full bg-surface-alt dark:bg-surface-dark text-text-muted dark:text-text-dark-muted border border-gray-200 dark:border-gray-700">UI/UX</a>
+                <a href="#" class="px-3 py-1 text-xs rounded-full bg-surface-alt dark:bg-surface-dark text-text-muted dark:text-text-dark-muted border border-gray-200 dark:border-gray-700">アクセシビリティ</a>
+                <a href="#" class="px-3 py-1 text-xs rounded-full bg-surface-alt dark:bg-surface-dark text-text-muted dark:text-text-dark-muted border border-gray-200 dark:border-gray-700">パフォーマンス</a>
+                <a href="#" class="px-3 py-1 text-xs rounded-full bg-surface-alt dark:bg-surface-dark text-text-muted dark:text-text-dark-muted border border-gray-200 dark:border-gray-700">スタートアップ</a>
+                <a href="#" class="px-3 py-1 text-xs rounded-full bg-surface-alt dark:bg-surface-dark text-text-muted dark:text-text-dark-muted border border-gray-200 dark:border-gray-700">生産性</a>
+                <a href="#" class="px-3 py-1 text-xs rounded-full bg-surface-alt dark:bg-surface-dark text-text-muted dark:text-text-dark-muted border border-gray-200 dark:border-gray-700">Figma</a>
+              </div>
+            </div>
+
+            <!-- ニュースレター登録 -->
+            <div class="rounded-xl bg-primary-50 dark:bg-primary-950 border border-primary-100 dark:border-primary-900 p-6 animate-on-scroll">
+              <h3 class="font-bold text-lg mb-2 text-text dark:text-text-dark">ニュースレター</h3>
+              <p class="text-sm text-text-muted dark:text-text-dark-muted mb-4">最新記事を毎週お届けします。</p>
+              <form class="space-y-3" onsubmit="event.preventDefault()">
+                <input type="email" placeholder="メールアドレス" class="w-full px-4 py-2.5 rounded-lg bg-white dark:bg-surface-dark text-sm text-text dark:text-text-dark border border-primary-200 dark:border-primary-800 focus:outline-none focus:ring-2 focus:ring-primary-400" />
+                <button type="submit" class="btn-subscribe w-full py-2.5 rounded-lg bg-primary-600 text-white text-sm font-bold hover:bg-primary-700 transition-colors">登録する</button>
+              </form>
+            </div>
+
+          </aside>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ── SINGLE ARTICLE VIEW SECTION ── -->
+    <!-- ══════════════════════════════════════════ -->
+    <div id="article-view" class="blog-section">
+      <section class="pt-24 pb-20 px-6">
+        <div class="mx-auto max-w-3xl">
+
+          <!-- Breadcrumb -->
+          <nav class="flex items-center gap-2 text-sm text-text-muted dark:text-text-dark-muted mb-8">
+            <a href="#" data-back-home class="hover:text-primary-600 dark:hover:text-primary-400">ホーム</a>
+            <span>/</span>
+            <span>テクノロジー</span>
+            <span>/</span>
+            <span class="text-text dark:text-text-dark">記事</span>
+          </nav>
+
+          <!-- Article Header -->
+          <header class="mb-10">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold badge-tech mb-4">テクノロジー</span>
+            <h1 class="text-3xl md:text-4xl font-bold text-text dark:text-text-dark leading-tight mb-6">2026年のフロントエンド開発トレンド：知っておくべき10の技術</h1>
+            <div class="flex flex-wrap items-center gap-4 text-sm text-text-muted dark:text-text-dark-muted">
+              <div class="flex items-center gap-2">
+                <svg class="w-8 h-8 rounded-full" viewBox="0 0 32 32"><rect width="32" height="32" rx="16" fill="#e2e8f0"/><circle cx="16" cy="12" r="5" fill="#94a3b8"/><ellipse cx="16" cy="28" rx="10" ry="8" fill="#94a3b8"/></svg>
+                <span>田中 太郎</span>
+              </div>
+              <span>2026年3月28日</span>
+              <span>12分で読めます</span>
+            </div>
+          </header>
+
+          <!-- Article Body -->
+          <div class="article-body text-text dark:text-text-dark">
+
+            <p>Webプラットフォームは2026年に入り、さらなる進化を遂げています。ブラウザのネイティブ機能が充実し、かつてはJavaScriptライブラリに頼っていた多くの機能が、CSSやWeb APIとして標準化されつつあります。</p>
+
+            <h2>1. CSS Scroll-driven Animations</h2>
+
+            <p>スクロール位置に連動したアニメーションが、JavaScriptなしで実現できるようになりました。<code>animation-timeline: view()</code> を使うことで、要素がビューポートに入るタイミングで自然なアニメーションを付けられます。</p>
+
+            <pre><code>.element {
+  animation: fade-in linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}</code></pre>
+
+            <h2>2. View Transitions API</h2>
+
+            <p>ページ遷移やDOM変更時にスムーズなアニメーションを付与する View Transitions API が、主要ブラウザでサポートされました。SPAだけでなく、MPAでもネイティブなトランジションが可能になっています。</p>
+
+            <h3>クロスドキュメント遷移</h3>
+
+            <p>同一オリジン内であれば、異なるHTMLページ間でもシームレスなトランジションを実現できます。metaタグを追加するだけで有効化されるため、導入コストが極めて低いのが特徴です。</p>
+
+            <blockquote>
+              <p>最良のアニメーションとは、ユーザーが意識しないアニメーションである。自然な遷移は、ユーザーの認知負荷を下げ、アプリケーションの信頼性を高める。</p>
+            </blockquote>
+
+            <h2>3. Container Queries の実践活用</h2>
+
+            <p>コンテナクエリは、レスポンシブデザインのパラダイムを変えました。ビューポートではなく、親コンテナのサイズに基づいてスタイルを切り替えることで、真にコンポーネントベースのレスポンシブ設計が可能になります。</p>
+
+            <ul>
+              <li>コンポーネントの再利用性が向上</li>
+              <li>デザインシステムとの親和性が高い</li>
+              <li>テストが容易（ビューポートサイズに依存しない）</li>
+              <li>サードパーティウィジェットでの活用</li>
+            </ul>
+
+            <h2>4. Tailwind CSS v4 の @theme ディレクティブ</h2>
+
+            <p>Tailwind CSS v4 では、設定ファイルが不要になり、CSSの <code>@theme</code> ディレクティブで直接デザイントークンを定義できます。これにより、設定とスタイルの一元管理が実現しました。</p>
+
+            <ol>
+              <li><code>tailwind.config.js</code> が不要に</li>
+              <li>CSSネイティブな設定方法</li>
+              <li>ビルドパフォーマンスの大幅改善</li>
+              <li>カスタムバリアントの柔軟な定義</li>
+            </ol>
+
+            <!-- Image placeholder -->
+            <div class="my-8 rounded-xl overflow-hidden">
+              <svg class="w-full" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="800" height="400" fill="#f1f5f9"/>
+                <rect x="50" y="50" width="700" height="300" rx="8" fill="#e2e8f0"/>
+                <text x="400" y="210" text-anchor="middle" fill="#94a3b8" font-size="16" font-family="sans-serif">図: フロントエンド技術の採用トレンド（2024-2026）</text>
+              </svg>
+            </div>
+
+            <h2>まとめ</h2>
+
+            <p>2026年のフロントエンド開発は、「ブラウザネイティブ」と「開発者体験」の両立がキーワードです。新しい技術を学びつつも、基本的なHTML・CSS・JavaScriptの理解を深めることが、今後も変わらない重要な投資です。</p>
+
+          </div>
+
+          <!-- Share Buttons -->
+          <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-sm font-bold text-text dark:text-text-dark mb-4">この記事をシェア</p>
+            <div class="flex gap-3">
+              <!-- Twitter/X -->
+              <a href="#" class="share-btn bg-black text-white" aria-label="Xでシェア">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <!-- Facebook -->
+              <a href="#" class="share-btn bg-[#1877F2] text-white" aria-label="Facebookでシェア">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <!-- Hatena Bookmark -->
+              <a href="#" class="share-btn bg-[#00A4DE] text-white" aria-label="はてなブックマーク">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.47 21.53c.66-.66 1.03-1.56 1.03-2.5V4.97c0-.94-.37-1.84-1.03-2.5A3.53 3.53 0 0 0 17.97 1.5H6.03c-.94 0-1.84.37-2.5 1.03A3.53 3.53 0 0 0 2.5 4.97v14.06c0 .94.37 1.84 1.03 2.5.66.66 1.56.97 2.5.97h11.94c.94 0 1.84-.37 2.5-1.03zM9 17H7V7h2v10zm8 0h-2v-3h-2v3h-2V7h4c1.1 0 2 .9 2 2v3c0 1.1-.9 2-2 2h0v3zm0-8h-2v3h2V9z"/></svg>
+              </a>
+              <!-- LINE -->
+              <a href="#" class="share-btn bg-[#06C755] text-white" aria-label="LINEでシェア">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Author Bio -->
+          <div class="mt-12 p-6 rounded-xl bg-surface-alt dark:bg-surface-dark-alt border border-gray-100 dark:border-gray-800 flex gap-5">
+            <svg class="w-16 h-16 rounded-full shrink-0" viewBox="0 0 64 64"><rect width="64" height="64" rx="32" fill="#e2e8f0"/><circle cx="32" cy="24" r="10" fill="#94a3b8"/><ellipse cx="32" cy="56" rx="20" ry="16" fill="#94a3b8"/></svg>
+            <div>
+              <p class="font-bold text-text dark:text-text-dark mb-1">田中 太郎</p>
+              <p class="text-sm text-text-muted dark:text-text-dark-muted leading-relaxed">フロントエンドエンジニア。Web標準技術とアクセシビリティに関心があり、オープンソースコミュニティにも積極的に参加。趣味はコーヒーとランニング。</p>
+            </div>
+          </div>
+
+          <!-- Related Articles -->
+          <div class="mt-16">
+            <h2 class="text-xl font-bold text-text dark:text-text-dark mb-6">関連記事</h2>
+            <div class="grid sm:grid-cols-3 gap-6">
+
+              <a href="#" data-show-article class="card-hover rounded-xl overflow-hidden bg-white dark:bg-surface-dark-alt shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="aspect-video overflow-hidden">
+                  <svg class="w-full h-full card-thumbnail" viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="225" fill="#3b82f6"/>
+                    <circle cx="200" cy="112" r="60" fill="rgba(255,255,255,0.1)"/>
+                    <rect x="160" y="92" width="80" height="40" rx="6" fill="rgba(255,255,255,0.15)"/>
+                  </svg>
+                </div>
+                <div class="p-4">
+                  <span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold badge-tech mb-2">テクノロジー</span>
+                  <h3 class="text-sm font-bold text-text dark:text-text-dark line-clamp-2">TypeScript 6.0の新機能を完全解説</h3>
+                </div>
+              </a>
+
+              <a href="#" data-show-article class="card-hover rounded-xl overflow-hidden bg-white dark:bg-surface-dark-alt shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="aspect-video overflow-hidden">
+                  <svg class="w-full h-full card-thumbnail" viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="225" fill="#ec4899"/>
+                    <rect x="120" y="60" width="160" height="100" rx="10" fill="rgba(255,255,255,0.1)"/>
+                    <circle cx="200" cy="110" r="25" fill="rgba(255,255,255,0.12)"/>
+                  </svg>
+                </div>
+                <div class="p-4">
+                  <span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold badge-design mb-2">デザイン</span>
+                  <h3 class="text-sm font-bold text-text dark:text-text-dark line-clamp-2">UIアニメーションの心理学</h3>
+                </div>
+              </a>
+
+              <a href="#" data-show-article class="card-hover rounded-xl overflow-hidden bg-white dark:bg-surface-dark-alt shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="aspect-video overflow-hidden">
+                  <svg class="w-full h-full card-thumbnail" viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="225" fill="#10b981"/>
+                    <polygon points="200,50 300,180 100,180" fill="rgba(255,255,255,0.1)"/>
+                    <circle cx="200" cy="140" r="20" fill="rgba(255,255,255,0.15)"/>
+                  </svg>
+                </div>
+                <div class="p-4">
+                  <span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold badge-lifestyle mb-2">ライフスタイル</span>
+                  <h3 class="text-sm font-bold text-text dark:text-text-dark line-clamp-2">エンジニアのための朝活習慣</h3>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ── Footer ── -->
+    <!-- ══════════════════════════════════════════ -->
+    <footer class="bg-surface-dark text-gray-400 py-16 px-6">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+          <!-- Brand -->
+          <div>
+            <p class="text-xl font-bold text-white mb-3"><span class="text-primary-400">Tech</span>Note</p>
+            <p class="text-sm leading-relaxed">テクノロジー、デザイン、ビジネスの最新情報をお届けするブログメディア。</p>
+          </div>
+
+          <!-- Categories -->
+          <div>
+            <p class="font-bold text-white mb-4">カテゴリ</p>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-primary-400 transition-colors">テクノロジー</a></li>
+              <li><a href="#" class="hover:text-primary-400 transition-colors">デザイン</a></li>
+              <li><a href="#" class="hover:text-primary-400 transition-colors">ビジネス</a></li>
+              <li><a href="#" class="hover:text-primary-400 transition-colors">ライフスタイル</a></li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <div>
+            <p class="font-bold text-white mb-4">このサイトについて</p>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-primary-400 transition-colors">運営者情報</a></li>
+              <li><a href="#" class="hover:text-primary-400 transition-colors">お問い合わせ</a></li>
+              <li><a href="#" class="hover:text-primary-400 transition-colors">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+
+          <!-- RSS & Social -->
+          <div>
+            <p class="font-bold text-white mb-4">フォロー</p>
+            <div class="flex gap-3">
+              <!-- RSS -->
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-primary-400 hover:bg-white/10 transition-all" aria-label="RSS">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+              </a>
+              <!-- Twitter/X -->
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all" aria-label="X">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pt-8 border-t border-gray-800 text-center text-sm">
+          <p>&copy; 2026 TechNote. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="株式会社テックノヴァ — テクノロジーで未来を切り拓く。DX推進・システム開発・ITコンサルティング。"
+    />
+    <title>株式会社テックノヴァ | TechNova Inc.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=optional" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=optional" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231d4ed8'/><text x='6' y='24' font-size='20' fill='white' font-weight='bold'>T</text></svg>" />
+    <meta name="view-transition" content="same-origin" />
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      (function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.body?document.body.setAttribute("data-theme",t):document.addEventListener("DOMContentLoaded",function(){document.body.setAttribute("data-theme",t)})})();
+    </script>
+  </head>
+  <body class="antialiased">
+    <!-- ── Scroll Progress Bar ── -->
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- ── Nav ── -->
+    <nav class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+      <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+        <a href="#" class="text-xl font-bold text-white tracking-tight">
+          <span class="inline-flex items-center gap-2">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="32" height="32" rx="6" fill="currentColor" class="text-primary-500"/>
+              <path d="M8 12h16M12 12v12M20 12v12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            TechNova
+          </span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm text-white/80">
+          <a href="#about" class="hover:text-white transition-colors">企業情報</a>
+          <a href="#services" class="hover:text-white transition-colors">事業内容</a>
+          <a href="#numbers" class="hover:text-white transition-colors">数字で見る</a>
+          <a href="#news" class="hover:text-white transition-colors">お知らせ</a>
+          <a href="#team" class="hover:text-white transition-colors">役員紹介</a>
+          <a href="#contact" class="hover:text-white transition-colors">お問い合わせ</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切替">
+            <svg class="theme-toggle-sun w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="theme-toggle-moon w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="menu-toggle" class="md:hidden text-white p-2" aria-label="メニュー">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-navy-900/95 backdrop-blur-md px-6 pb-6">
+        <div class="flex flex-col gap-4 text-sm text-white/80">
+          <a href="#about" class="py-2 border-b border-white/10">企業情報</a>
+          <a href="#services" class="py-2 border-b border-white/10">事業内容</a>
+          <a href="#numbers" class="py-2 border-b border-white/10">数字で見る</a>
+          <a href="#news" class="py-2 border-b border-white/10">お知らせ</a>
+          <a href="#team" class="py-2 border-b border-white/10">役員紹介</a>
+          <a href="#contact" class="py-2">お問い合わせ</a>
+          <button id="theme-toggle-mobile" class="theme-toggle self-start mt-2" aria-label="テーマ切替">
+            <svg class="theme-toggle-sun w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="theme-toggle-moon w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ── 1. Hero ── -->
+    <!-- ══════════════════════════════════════════ -->
+    <section id="hero" class="hero-corporate relative min-h-screen flex items-center overflow-hidden">
+      <div class="hero-grid-pattern"></div>
+      <div class="hero-shapes">
+        <div class="hero-shape hero-shape--ring-1"></div>
+        <div class="hero-shape hero-shape--ring-2"></div>
+        <div class="hero-shape hero-shape--square"></div>
+        <div class="hero-shape hero-shape--dot"></div>
+      </div>
+
+      <div class="relative z-10 mx-auto max-w-7xl px-6 py-32 text-center">
+        <p class="text-primary-300 text-sm font-medium tracking-widest uppercase mb-4">Technology × Innovation</p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight mb-6">
+          テクノロジーで、<br/>未来を切り拓く。
+        </h1>
+        <p class="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+          株式会社テックノヴァは、DX推進・システム開発・ITコンサルティングを通じて、<br class="hidden sm:block"/>お客様のビジネス変革を支援します。
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" class="btn-primary inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-bold px-8 py-4 rounded-lg text-base">
+            お問い合わせ
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#about" class="inline-flex items-center justify-center gap-2 border border-white/20 text-white hover:bg-white/10 font-medium px-8 py-4 rounded-lg text-base transition-colors">
+            企業情報を見る
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ── 2. About / Mission ── -->
+    <!-- ══════════════════════════════════════════ -->
+    <section id="about" class="bg-surface dark:bg-surface-dark py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16 animate-on-scroll">
+          <p class="text-primary-600 dark:text-primary-400 text-sm font-semibold tracking-widest uppercase mb-3">About Us</p>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">私たちについて</h2>
+          <p class="text-text-muted dark:text-text-dark-muted max-w-2xl mx-auto leading-relaxed">
+            テックノヴァは「テクノロジーの力で、すべての人に新しい可能性を」を理念に掲げ、<br class="hidden sm:block"/>2015年の創業以来、お客様と共に成長を続けています。
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Mission -->
+          <div class="animate-on-scroll card-hover bg-surface-alt dark:bg-surface-dark-alt rounded-2xl p-8 text-center">
+            <div class="w-14 h-14 mx-auto mb-5 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-600 dark:text-primary-400" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-3">Mission</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm leading-relaxed">テクノロジーの力で、すべての人に新しい可能性を届ける。複雑な課題をシンプルに解決し、社会に貢献する。</p>
+          </div>
+
+          <!-- Vision -->
+          <div class="animate-on-scroll card-hover bg-surface-alt dark:bg-surface-dark-alt rounded-2xl p-8 text-center">
+            <div class="w-14 h-14 mx-auto mb-5 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-600 dark:text-primary-400" stroke-width="1.5"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-3">Vision</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm leading-relaxed">2030年までにアジア太平洋地域でもっとも信頼されるテクノロジーパートナーとなる。</p>
+          </div>
+
+          <!-- Values -->
+          <div class="animate-on-scroll card-hover bg-surface-alt dark:bg-surface-dark-alt rounded-2xl p-8 text-center">
+            <div class="w-14 h-14 mx-auto mb-5 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-600 dark:text-primary-400" stroke-width="1.5"><path d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-3">Values</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm leading-relaxed">誠実・挑戦・共創。お客様との信頼関係を第一に、常に新しい価値を生み出し続ける。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ── 3. Services ── -->
+    <!-- ══════════════════════════════════════════ -->
+    <section id="services" class="bg-surface-alt dark:bg-surface-dark-alt py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16 animate-on-scroll">
+          <p class="text-primary-600 dark:text-primary-400 text-sm font-semibold tracking-widest uppercase mb-3">Services</p>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">事業内容</h2>
+          <p class="text-text-muted dark:text-text-dark-muted max-w-2xl mx-auto">お客様の課題に合わせた最適なソリューションを提供します。</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div class="animate-on-scroll card-hover bg-surface dark:bg-surface-dark rounded-2xl p-8 border border-black/5 dark:border-white/5">
+            <div class="w-12 h-12 mb-5 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-600 dark:text-primary-400" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2">システム開発</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm leading-relaxed">Webアプリケーション、業務システム、モバイルアプリなど、要件定義から運用まで一貫して対応します。</p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="animate-on-scroll card-hover bg-surface dark:bg-surface-dark rounded-2xl p-8 border border-black/5 dark:border-white/5">
+            <div class="w-12 h-12 mb-5 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-600 dark:text-primary-400" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2">DXコンサルティング</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm leading-relaxed">デジタルトランスフォーメーションの戦略立案から実行支援まで、組織変革をトータルサポートします。</p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="animate-on-scroll card-hover bg-surface dark:bg-surface-dark rounded-2xl p-8 border border-black/5 dark:border-white/5">
+            <div class="w-12 h-12 mb-5 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-600 dark:text-primary-400" stroke-width="1.5"><path d="M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2zm10-10V7a4 4 0 0 0-8 0v4h8z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2">セキュリティ対策</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm leading-relaxed">脆弱性診断、セキュリティ監査、インシデント対応まで、企業の情報資産を守ります。</p>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="animate-on-scroll card-hover bg-surface dark:bg-surface-dark rounded-2xl p-8 border border-black/5 dark:border-white/5">
+            <div class="w-12 h-12 mb-5 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-600 dark:text-primary-400" stroke-width="1.5"><path d="M3 15a4 4 0 0 0 4 4h9a5 5 0 1 0-.1-9.999 5.002 5.002 0 0 0-9.78 2.096A4.001 4.001 0 0 0 3 15z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2">クラウド基盤構築</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm leading-relaxed">AWS・GCP・Azureなど主要クラウドの設計・構築・運用をワンストップで提供します。</p>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="animate-on-scroll card-hover bg-surface dark:bg-surface-dark rounded-2xl p-8 border border-black/5 dark:border-white/5">
+            <div class="w-12 h-12 mb-5 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-600 dark:text-primary-400" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2">AI・データ活用</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm leading-relaxed">機械学習・データ分析基盤の構築から、AIを活用した業務効率化ソリューションを提案します。</p>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="animate-on-scroll card-hover bg-surface dark:bg-surface-dark rounded-2xl p-8 border border-black/5 dark:border-white/5">
+            <div class="w-12 h-12 mb-5 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-600 dark:text-primary-400" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2">IT人材派遣</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm leading-relaxed">エンジニア・PM・デザイナーなど、プロジェクトに最適な人材をご紹介・派遣します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ── 4. Company Numbers ── -->
+    <!-- ══════════════════════════════════════════ -->
+    <section id="numbers" class="hero-corporate relative py-24 sm:py-32 overflow-hidden">
+      <div class="hero-grid-pattern"></div>
+      <div class="relative z-10 mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16">
+          <p class="text-primary-300 text-sm font-semibold tracking-widest uppercase mb-3">Numbers</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">数字で見るテックノヴァ</h2>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div class="animate-scale-on-scroll">
+            <p class="counter-value text-4xl sm:text-5xl font-black text-white mb-2" data-count="2015">0</p>
+            <p class="text-white/60 text-sm">設立年</p>
+          </div>
+          <div class="animate-scale-on-scroll">
+            <p class="counter-value text-4xl sm:text-5xl font-black text-white mb-2" data-count="280" data-suffix="名">0</p>
+            <p class="text-white/60 text-sm">従業員数</p>
+          </div>
+          <div class="animate-scale-on-scroll">
+            <p class="counter-value text-4xl sm:text-5xl font-black text-white mb-2" data-count="500" data-suffix="+">0</p>
+            <p class="text-white/60 text-sm">累計プロジェクト数</p>
+          </div>
+          <div class="animate-scale-on-scroll">
+            <p class="counter-value text-4xl sm:text-5xl font-black text-white mb-2" data-count="5" data-suffix="拠点">0</p>
+            <p class="text-white/60 text-sm">国内拠点</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ── 5. News ── -->
+    <!-- ══════════════════════════════════════════ -->
+    <section id="news" class="bg-surface dark:bg-surface-dark py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16 animate-on-scroll">
+          <p class="text-primary-600 dark:text-primary-400 text-sm font-semibold tracking-widest uppercase mb-3">News</p>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">お知らせ</h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-0 divide-y divide-black/5 dark:divide-white/5">
+          <a href="#" class="animate-on-scroll flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 py-5 group">
+            <span class="news-date text-xs font-medium text-text-muted dark:text-text-dark-muted bg-surface-alt dark:bg-surface-dark-alt px-3 py-1 rounded-full self-start whitespace-nowrap">2026.04.01</span>
+            <span class="flex items-center gap-2">
+              <span class="text-xs font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-2 py-0.5 rounded">お知らせ</span>
+              <span class="text-sm group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">新年度のご挨拶 — 代表取締役社長メッセージを掲載しました</span>
+            </span>
+          </a>
+          <a href="#" class="animate-on-scroll flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 py-5 group">
+            <span class="news-date text-xs font-medium text-text-muted dark:text-text-dark-muted bg-surface-alt dark:bg-surface-dark-alt px-3 py-1 rounded-full self-start whitespace-nowrap">2026.03.15</span>
+            <span class="flex items-center gap-2">
+              <span class="text-xs font-bold text-white bg-primary-600 px-2 py-0.5 rounded">プレス</span>
+              <span class="text-sm group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">福岡オフィスを新設、九州エリアの事業を拡大します</span>
+            </span>
+          </a>
+          <a href="#" class="animate-on-scroll flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 py-5 group">
+            <span class="news-date text-xs font-medium text-text-muted dark:text-text-dark-muted bg-surface-alt dark:bg-surface-dark-alt px-3 py-1 rounded-full self-start whitespace-nowrap">2026.02.28</span>
+            <span class="flex items-center gap-2">
+              <span class="text-xs font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-2 py-0.5 rounded">採用</span>
+              <span class="text-sm group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">2027年度 新卒採用エントリーを開始しました</span>
+            </span>
+          </a>
+          <a href="#" class="animate-on-scroll flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 py-5 group">
+            <span class="news-date text-xs font-medium text-text-muted dark:text-text-dark-muted bg-surface-alt dark:bg-surface-dark-alt px-3 py-1 rounded-full self-start whitespace-nowrap">2026.02.10</span>
+            <span class="flex items-center gap-2">
+              <span class="text-xs font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-2 py-0.5 rounded">お知らせ</span>
+              <span class="text-sm group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">セキュリティ認証 ISO 27001 を取得しました</span>
+            </span>
+          </a>
+          <a href="#" class="animate-on-scroll flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 py-5 group">
+            <span class="news-date text-xs font-medium text-text-muted dark:text-text-dark-muted bg-surface-alt dark:bg-surface-dark-alt px-3 py-1 rounded-full self-start whitespace-nowrap">2026.01.20</span>
+            <span class="flex items-center gap-2">
+              <span class="text-xs font-bold text-white bg-primary-600 px-2 py-0.5 rounded">プレス</span>
+              <span class="text-sm group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">AI活用支援サービス「NovaAI」の提供を開始しました</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ── 6. Team ── -->
+    <!-- ══════════════════════════════════════════ -->
+    <section id="team" class="bg-surface-alt dark:bg-surface-dark-alt py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16 animate-on-scroll">
+          <p class="text-primary-600 dark:text-primary-400 text-sm font-semibold tracking-widest uppercase mb-3">Team</p>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">役員紹介</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Member 1 -->
+          <div class="animate-on-scroll card-hover bg-surface dark:bg-surface-dark rounded-2xl p-8 text-center border border-black/5 dark:border-white/5">
+            <div class="team-avatar mx-auto mb-5">
+              <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-400" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="font-bold mb-1">田中 太郎</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm mb-3">代表取締役社長 / CEO</p>
+            <p class="text-text-muted dark:text-text-dark-muted text-xs leading-relaxed">大手SIer出身。2015年にテックノヴァを創業。DX推進の第一人者。</p>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="animate-on-scroll card-hover bg-surface dark:bg-surface-dark rounded-2xl p-8 text-center border border-black/5 dark:border-white/5">
+            <div class="team-avatar mx-auto mb-5">
+              <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-400" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="font-bold mb-1">佐藤 花子</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm mb-3">取締役副社長 / COO</p>
+            <p class="text-text-muted dark:text-text-dark-muted text-xs leading-relaxed">外資コンサル出身。事業戦略と組織運営を統括。</p>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="animate-on-scroll card-hover bg-surface dark:bg-surface-dark rounded-2xl p-8 text-center border border-black/5 dark:border-white/5">
+            <div class="team-avatar mx-auto mb-5">
+              <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-400" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="font-bold mb-1">鈴木 一郎</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm mb-3">取締役 CTO</p>
+            <p class="text-text-muted dark:text-text-dark-muted text-xs leading-relaxed">クラウドアーキテクト。OSS コミュニティにも積極的に貢献。</p>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="animate-on-scroll card-hover bg-surface dark:bg-surface-dark rounded-2xl p-8 text-center border border-black/5 dark:border-white/5">
+            <div class="team-avatar mx-auto mb-5">
+              <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-primary-400" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="font-bold mb-1">高橋 美咲</h3>
+            <p class="text-text-muted dark:text-text-dark-muted text-sm mb-3">取締役 CFO</p>
+            <p class="text-text-muted dark:text-text-dark-muted text-xs leading-relaxed">公認会計士。IPO準備からファイナンス戦略まで幅広く担当。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ── 7. Contact / Access ── -->
+    <!-- ══════════════════════════════════════════ -->
+    <section id="contact" class="bg-surface dark:bg-surface-dark py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16 animate-on-scroll">
+          <p class="text-primary-600 dark:text-primary-400 text-sm font-semibold tracking-widest uppercase mb-3">Contact</p>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">お問い合わせ・アクセス</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Contact Info -->
+          <div class="animate-on-scroll">
+            <h3 class="text-xl font-bold mb-6">会社概要</h3>
+            <dl class="space-y-4 text-sm">
+              <div class="flex gap-4">
+                <dt class="font-medium text-text-muted dark:text-text-dark-muted w-28 shrink-0">会社名</dt>
+                <dd>株式会社テックノヴァ</dd>
+              </div>
+              <div class="flex gap-4">
+                <dt class="font-medium text-text-muted dark:text-text-dark-muted w-28 shrink-0">英文社名</dt>
+                <dd>TechNova Inc.</dd>
+              </div>
+              <div class="flex gap-4">
+                <dt class="font-medium text-text-muted dark:text-text-dark-muted w-28 shrink-0">設立</dt>
+                <dd>2015年4月1日</dd>
+              </div>
+              <div class="flex gap-4">
+                <dt class="font-medium text-text-muted dark:text-text-dark-muted w-28 shrink-0">資本金</dt>
+                <dd>1億円</dd>
+              </div>
+              <div class="flex gap-4">
+                <dt class="font-medium text-text-muted dark:text-text-dark-muted w-28 shrink-0">代表者</dt>
+                <dd>代表取締役社長 田中 太郎</dd>
+              </div>
+              <div class="flex gap-4">
+                <dt class="font-medium text-text-muted dark:text-text-dark-muted w-28 shrink-0">所在地</dt>
+                <dd>〒100-0005<br/>東京都千代田区丸の内1-1-1<br/>テックノヴァビル 10F</dd>
+              </div>
+              <div class="flex gap-4">
+                <dt class="font-medium text-text-muted dark:text-text-dark-muted w-28 shrink-0">TEL</dt>
+                <dd>03-1234-5678</dd>
+              </div>
+              <div class="flex gap-4">
+                <dt class="font-medium text-text-muted dark:text-text-dark-muted w-28 shrink-0">E-mail</dt>
+                <dd>info@example.com</dd>
+              </div>
+            </dl>
+
+            <div class="mt-8">
+              <a href="mailto:info@example.com" class="btn-primary inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-bold px-6 py-3 rounded-lg text-sm">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/></svg>
+                メールでお問い合わせ
+              </a>
+            </div>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="animate-on-scroll">
+            <div class="map-placeholder rounded-2xl overflow-hidden">
+              <div class="text-center p-12">
+                <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-text-muted dark:text-text-dark-muted mx-auto mb-4" stroke-width="1"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z"/><path d="M15 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
+                <p class="text-text-muted dark:text-text-dark-muted text-sm mb-1">Google Maps 埋め込みエリア</p>
+                <p class="text-text-muted dark:text-text-dark-muted text-xs">東京都千代田区丸の内1-1-1</p>
+              </div>
+            </div>
+            <p class="text-text-muted dark:text-text-dark-muted text-xs mt-4">
+              <strong>アクセス:</strong> JR東京駅 丸の内南口より徒歩3分 / 東京メトロ丸ノ内線 東京駅直結
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ── 8. Footer ── -->
+    <!-- ══════════════════════════════════════════ -->
+    <footer class="footer-corporate bg-navy-900 text-white/70 py-16">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <!-- Company -->
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="32" height="32" rx="6" fill="currentColor" class="text-primary-500"/>
+                <path d="M8 12h16M12 12v12M20 12v12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+              <span class="text-white font-bold text-lg">TechNova</span>
+            </div>
+            <p class="text-sm leading-relaxed">テクノロジーの力で、<br/>すべての人に新しい可能性を。</p>
+          </div>
+
+          <!-- Sitemap -->
+          <div>
+            <h4 class="text-white font-bold text-sm mb-4">サイトマップ</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#about" class="hover:text-white transition-colors">企業情報</a></li>
+              <li><a href="#services" class="hover:text-white transition-colors">事業内容</a></li>
+              <li><a href="#news" class="hover:text-white transition-colors">お知らせ</a></li>
+              <li><a href="#team" class="hover:text-white transition-colors">役員紹介</a></li>
+              <li><a href="#contact" class="hover:text-white transition-colors">お問い合わせ</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div>
+            <h4 class="text-white font-bold text-sm mb-4">法的情報</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition-colors">プライバシーポリシー</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">特定商取引法に基づく表記</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">利用規約</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">情報セキュリティ方針</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="text-white font-bold text-sm mb-4">お問い合わせ</h4>
+            <ul class="space-y-2 text-sm">
+              <li>〒100-0005</li>
+              <li>東京都千代田区丸の内1-1-1</li>
+              <li>TEL: 03-1234-5678</li>
+              <li>info@example.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8 text-center text-xs text-white/40">
+          <p>&copy; 2026 TechNova Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

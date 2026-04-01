@@ -1,134 +1,382 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<title>Created based on the HTML5 and CSS3</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="author" content="authorName">
-<meta name="copyright" content="Copyright (C) tricksy">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="index" href="/">
-<link rel="alternate" href="/feed/index.xml" type="application/rss+xml" title="RSS 2.0">
-<link rel="stylesheet" href="./css/default.css">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/css3buttons.css">
-<script src="http://www.google.com/jsapi"></script>
-<script>google.load("jquery", "1.4");</script>
-<script src="./js/share.js"></script>
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Templates — 2026年のベストプラクティス テンプレート集</title>
+<meta name="description" content="Vite 6 + Tailwind CSS v4 で構築されたモダンなHTML/CSSテンプレートコレクション。LP、ポートフォリオ、コーポレート、ブログの4種類。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-primary:#0f172a;--bg-secondary:#1e293b;--bg-card:rgba(30,41,59,.6);
+  --text-primary:#f1f5f9;--text-secondary:#94a3b8;--text-muted:#64748b;
+  --accent-1:#6366f1;--accent-2:#8b5cf6;--accent-3:#a78bfa;
+  --border:rgba(148,163,184,.12);--glass:rgba(255,255,255,.04);
+  --radius:16px;--transition:0.3s cubic-bezier(.4,0,.2,1);
+}
+[data-theme="light"]{
+  --bg-primary:#f8fafc;--bg-secondary:#e2e8f0;--bg-card:rgba(255,255,255,.7);
+  --text-primary:#0f172a;--text-secondary:#475569;--text-muted:#94a3b8;
+  --border:rgba(15,23,42,.08);--glass:rgba(255,255,255,.5);
+}
+html{scroll-behavior:smooth;font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Hiragino Sans','Noto Sans JP',sans-serif;color:var(--text-primary);background:var(--bg-primary)}
+body{min-height:100vh;line-height:1.6;overflow-x:hidden;background:linear-gradient(180deg,var(--bg-primary) 0%,#020617 100%)}
+[data-theme="light"] body{background:linear-gradient(180deg,var(--bg-primary) 0%,#e2e8f0 100%)}
+
+/* Utility */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;backdrop-filter:blur(20px);background:rgba(15,23,42,.6);border-bottom:1px solid var(--border);transition:var(--transition)}
+[data-theme="light"] header{background:rgba(248,250,252,.7)}
+header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.25rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.logo-icon{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff}
+header nav{display:flex;align-items:center;gap:24px}
+header nav a{font-size:.875rem;color:var(--text-secondary);transition:var(--transition)}
+header nav a:hover{color:var(--text-primary)}
+.theme-toggle{width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--glass);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);color:var(--text-secondary);font-size:1.1rem}
+.theme-toggle:hover{border-color:var(--accent-1);color:var(--accent-3)}
+.gh-link{display:flex;align-items:center;gap:6px;font-size:.875rem;color:var(--text-secondary);padding:8px 16px;border-radius:10px;border:1px solid var(--border);transition:var(--transition)}
+.gh-link:hover{border-color:var(--accent-1);color:var(--text-primary)}
+.gh-link svg{width:18px;height:18px}
+
+/* Hero */
+.hero{padding:160px 0 80px;text-align:center;position:relative}
+.hero::before{content:'';position:absolute;top:80px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,.12) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;border:1px solid var(--border);background:var(--glass);font-size:.8rem;color:var(--text-secondary);margin-bottom:24px}
+.hero-badge span{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-bottom:16px;background:linear-gradient(135deg,var(--text-primary) 30%,var(--accent-3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:clamp(1rem,2vw,1.25rem);color:var(--text-secondary);max-width:640px;margin:0 auto 40px}
+.hero-stats{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.hero-stats div{text-align:center}
+.hero-stats strong{display:block;font-size:1.5rem;font-weight:700;color:var(--text-primary)}
+.hero-stats small{font-size:.8rem;color:var(--text-muted)}
+
+/* Cards Grid */
+.templates{padding:80px 0}
+.section-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent-3);font-weight:600;margin-bottom:8px}
+.section-title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;letter-spacing:-.03em;margin-bottom:48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:var(--transition);backdrop-filter:blur(12px);opacity:0;transform:translateY(30px)}
+.card.visible{opacity:1;transform:translateY(0)}
+.card:hover{transform:translateY(-4px);border-color:rgba(99,102,241,.3);box-shadow:0 20px 40px rgba(0,0,0,.2)}
+[data-theme="light"] .card:hover{box-shadow:0 20px 40px rgba(0,0,0,.08)}
+.card-visual{height:200px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--bg-secondary),var(--bg-primary))}
+.card-visual svg{width:100%;height:100%;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.card:hover .card-visual svg{transform:scale(1.05)}
+.card-body{padding:24px}
+.card-body h3{font-size:1.125rem;font-weight:700;margin-bottom:8px;letter-spacing:-.01em}
+.card-body p{font-size:.875rem;color:var(--text-secondary);margin-bottom:16px;line-height:1.7}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.badge{font-size:.7rem;padding:4px 10px;border-radius:6px;background:rgba(99,102,241,.1);color:var(--accent-3);border:1px solid rgba(99,102,241,.15);font-weight:500}
+.card-actions{display:flex;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:10px;font-size:.8rem;font-weight:600;transition:var(--transition);cursor:pointer;border:none}
+.btn-primary{background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#fff}
+.btn-primary:hover{opacity:.9;box-shadow:0 4px 20px rgba(99,102,241,.4)}
+.btn-ghost{background:var(--glass);color:var(--text-secondary);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--accent-1);color:var(--text-primary)}
+
+/* Features */
+.features{padding:80px 0}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.feature{padding:28px;border-radius:var(--radius);border:1px solid var(--border);background:var(--glass);transition:var(--transition);opacity:0;transform:translateY(20px)}
+.feature.visible{opacity:1;transform:translateY(0)}
+.feature:hover{border-color:rgba(99,102,241,.2)}
+.feature-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(139,92,246,.15));display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:16px}
+.feature h3{font-size:1rem;font-weight:600;margin-bottom:6px}
+.feature p{font-size:.825rem;color:var(--text-secondary);line-height:1.6}
+
+/* Footer */
+footer{padding:48px 0;border-top:1px solid var(--border);margin-top:80px}
+footer .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer p{font-size:.8rem;color:var(--text-muted)}
+footer a{color:var(--accent-3);transition:var(--transition)}
+footer a:hover{color:var(--accent-1)}
+
+/* Scroll animation stagger */
+.card:nth-child(1){transition-delay:.05s}
+.card:nth-child(2){transition-delay:.15s}
+.card:nth-child(3){transition-delay:.25s}
+.card:nth-child(4){transition-delay:.35s}
+.feature:nth-child(1){transition-delay:.05s}
+.feature:nth-child(2){transition-delay:.1s}
+.feature:nth-child(3){transition-delay:.15s}
+.feature:nth-child(4){transition-delay:.2s}
+.feature:nth-child(5){transition-delay:.25s}
+.feature:nth-child(6){transition-delay:.3s}
+
+/* Mobile */
+@media(max-width:640px){
+  header nav .nav-links{display:none}
+  .hero-stats{gap:24px}
+  .card-actions{flex-direction:column}
+  .btn{justify-content:center}
+  footer .container{flex-direction:column;text-align:center}
+}
+</style>
 </head>
-<body id="siteID" class="topBody">
-<div id="page">
-  <header id="globalHeader">
-    <hgroup>
-      <h1><a href="/">Created based on the HTML5 and CSS3　(h1)</a></h1>
-    </hgroup>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">✦</div>
+      Modern Templates
+    </div>
     <nav>
-      <ul>
-        <li><a href="/">ヘッダーナビ　(nav ul li)</a></li>
-        <li><a href="/">ヘッダーナビ　(nav ul li)</a></li>
-        <li><a href="/">ヘッダーナビ　(nav ul li)</a></li>
-        <li><a href="/">ヘッダーナビ　(nav ul li)</a></li>
-      </ul>
+      <span class="nav-links">
+        <a href="#templates">テンプレート</a>
+        <a href="#features">特徴</a>
+      </span>
+      <a href="https://github.com/miyoshi-tricksy/html5-css3-template-beta" class="gh-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        GitHub
+      </a>
+      <button class="theme-toggle" aria-label="テーマ切替" onclick="toggleTheme()">🌙</button>
     </nav>
-    <!-- / #globalHeader --></header>
-  <div id="contents">
-    <div id="main">
-      <artice>
-        <section>
-          <h2>記事タイトル　(h2)</h2>
-          <p>ここは文章のパラグラフにあたる文章を記載します。<strong>強調　(strong)</strong>ここは文章のパラグラフにあたる文章を記載します。<a href="#">リンク　(a)</a>ここは文章のパラグラフにあたる文章を記載します。ここは文章のパラグラフにあたる文章を記載します。　(p)</p>
-          <p>ここは文章のパラグラフにあたる文章を記載します。ここは文章のパラグラフにあたる文章を記載します。ここは文章のパラグラフにあたる文章を記載します。ここは文章のパラグラフにあたる文章を記載します。　(p)</p>
-        </section>
-        <section>
-          <h2>記事タイトル　(h2)</h2>
-          <p>ここは文章のパラグラフにあたる文章を記載します。ここは文章のパラグラフにあたる文章を記載します。ここは文章のパラグラフにあたる文章を記載します。ここは文章のパラグラフにあたる文章を記載します。　(p)</p>
-          <p>ここは文章のパラグラフにあたる文章を記載します。ここは文章のパラグラフにあたる文章を記載します。ここは文章のパラグラフにあたる文章を記載します。ここは文章のパラグラフにあたる文章を記載します。　(p)</p>
-        </section>
-      </artice>
-      <p class="pageTop"><a href="#page" class="pill button"><span class="uparrow icon"></span>このページの先頭へ</a></p>
-      <h3>リスト・タイプ　(h3)</h3>
-      <h4>並列列挙リスト[ul , li]　(h4)</h4>
-      <ul>
-        <li>リストアイテム A</li>
-        <li>リストアイテム B</li>
-        <li>リストアイテム C</li>
-      </ul>
-      <h4>順序付き(番号付き)リスト[ol , li]　(h4)</h4>
-      <ol>
-        <li>リストアイテム 1</li>
-        <li>リストアイテム 2</li>
-        <li>リストアイテム 3</li>
-      </ol>
-      <h4>定義型リスト[dl , dt ,dd]　(h4)</h4>
-      <dl>
-        <dt>用語 A　(dt)</dt>
-        <dd>その定義 A その定義 A その定義 A その定義 A その定義 A その定義 A その定義 A 　(dd)</dd>
-        <dt>用語 B 用語 B 用語 B 用語 B 用語 B 用語 B 用語 B 用語 B 用語 B 用語 B　(dt)</dt>
-        <dd>その定義 B その定義 B その定義 B その定義 B その定義 B その定義 B その定義 B その定義 B その定義 B その定義 B　(dd)</dd>
-      </dl>
-      <hr>
-      <dl class="yoko">
-        <dt>用語 A　(dt)</dt>
-        <dd>その定義 A その定義 A その定義 A その定義 A その定義 A その定義 A その定義 A 　(dd)</dd>
-        <dt>用語 B 用語 B 用語 B 用語 B 用語 B 用語 B 用語 B 用語 B 用語 B 用語 B　(dt)</dt>
-        <dd>その定義 B その定義 B その定義 B その定義 B その定義 B その定義 B その定義 B その定義 B その定義 B その定義 B　(dd)</dd>
-        <hr class="zeroline" />
-      </dl>
-      <hr>
-      <h3>テーブル　(h3)</h3>
-      <table cellpadding="0" cellspacing="0">
-        <tbody>
-          <tr>
-            <th>Table Header 1　(th)</th>
-            <th>Table Header 2　(th)</th>
-            <th>Table Header 3　(th)</th>
-          </tr>
-          <tr>
-            <td>Division 1　(td)</td>
-            <td>Division 2　(td)</td>
-            <td>Division 3　(td)</td>
-          </tr>
-          <tr>
-            <td>Division 1　(td)</td>
-            <td>Division 2　(td)</td>
-            <td>Division 3　(td)</td>
-          </tr>
-          <tr>
-            <td>Division 1　(td)</td>
-            <td>Division 2　(td)</td>
-            <td>Division 3　(td)</td>
-          </tr>
-        </tbody>
-      </table>
-      <hr>
-      <h3>その他の要素 [pre , blockquote]　(h3)</h3>
-      <blockquote>他の文書からの引用箇所です。<br>
-        blockquote要素でくくっての引用です。blockquote要素でくくっての引用です。blockquote要素でくくっての引用です。　(blockquote)</blockquote>
-      <pre>pre要素です。整形済みの要素を表します。
-Fastladder is the best solution for RSS / Atom feed reader. We'll support your quick readings.　(pre) </pre>
-      <p class="pageTop"><a href="#page" class="pill button"><span class="uparrow icon"></span>このページの先頭へ</a></p>
-      <!-- / #main --></div>
-    <div id="side">
-      <h3>サイドメニュー[nav]　(h3)</h3>
-      <nav>
-        <ul>
-          <li><a href="/">Side-menu　(nav ul li)</a></li>
-          <li><a href="/">Side-menu　(nav ul li)</a></li>
-          <li><a href="/">Side-menu　(nav ul li)</a></li>
-        </ul>
-      </nav>
-      <!-- / #side --></div>
-    <!-- / #contents --></div>
-  <footer id="globalFooter">
-    <ul>
-      <li><a href="/">フッターナビ　(nav ul li)</a></li>
-      <li><a href="/">フッターナビ　(nav ul li)</a></li>
-      <li><a href="/">フッターナビ　(nav ul li)</a></li>
-    </ul>
-    <p class="copyright"><small>Copyright &copy; 2011 HTML5-@ttricksy. All Rights Reserved.</small></p>
-    <!-- / #globalFooter --></footer>
-  <!-- / #page --></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge"><span></span>2026 Edition</div>
+      <h1>Modern Templates</h1>
+      <p>2026年のベストプラクティス テンプレート集。<br>Vite 6 + Tailwind CSS v4 で構築された、プロダクションレディなテンプレート。</p>
+      <div class="hero-stats">
+        <div><strong>4</strong><small>テンプレート</small></div>
+        <div><strong>Vite 6</strong><small>ビルドツール</small></div>
+        <div><strong>Tailwind v4</strong><small>CSSフレームワーク</small></div>
+        <div><strong>0</strong><small>フレームワーク依存</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="templates" id="templates">
+    <div class="container">
+      <div class="section-label">Templates</div>
+      <h2 class="section-title">テンプレート一覧</h2>
+      <div class="grid">
+
+        <!-- LP -->
+        <div class="card">
+          <div class="card-visual">
+            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="lp-g1" x1="0" y1="0" x2="400" y2="200"><stop offset="0%" stop-color="#6366f1" stop-opacity=".15"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity=".05"/></linearGradient></defs>
+              <rect width="400" height="200" fill="url(#lp-g1)"/>
+              <rect x="40" y="30" width="200" height="12" rx="6" fill="#6366f1" opacity=".4"/>
+              <rect x="40" y="52" width="140" height="8" rx="4" fill="#94a3b8" opacity=".2"/>
+              <rect x="40" y="68" width="160" height="8" rx="4" fill="#94a3b8" opacity=".15"/>
+              <rect x="40" y="92" width="90" height="32" rx="8" fill="#6366f1" opacity=".6"/>
+              <rect x="140" y="92" width="70" height="32" rx="8" fill="#94a3b8" opacity=".1" stroke="#94a3b8" stroke-opacity=".2"/>
+              <rect x="260" y="30" width="110" height="90" rx="12" fill="#8b5cf6" opacity=".08" stroke="#8b5cf6" stroke-opacity=".15"/>
+              <circle cx="315" cy="75" r="20" fill="#a78bfa" opacity=".12"/>
+              <rect x="40" y="145" width="70" height="40" rx="8" fill="#94a3b8" opacity=".06"/>
+              <rect x="120" y="145" width="70" height="40" rx="8" fill="#94a3b8" opacity=".06"/>
+              <rect x="200" y="145" width="70" height="40" rx="8" fill="#94a3b8" opacity=".06"/>
+              <rect x="280" y="145" width="70" height="40" rx="8" fill="#94a3b8" opacity=".06"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>ランディングページ</h3>
+            <p>SaaS/サービス紹介に最適なLP。ヒーロー、機能紹介、料金表、FAQ、CTAの7セクション構成。スクロール連動アニメーション搭載。</p>
+            <div class="badges">
+              <span class="badge">Vite 6</span>
+              <span class="badge">Tailwind v4</span>
+              <span class="badge">Scroll Animations</span>
+              <span class="badge">View Transitions</span>
+            </div>
+            <div class="card-actions">
+              <a href="templates/lp/index.html" class="btn btn-primary">プレビュー →</a>
+              <a href="https://github.com/miyoshi-tricksy/html5-css3-template-beta/tree/master/templates/lp" class="btn btn-ghost" target="_blank" rel="noopener">ソースコード</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="card">
+          <div class="card-visual">
+            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="pf-g1" x1="0" y1="0" x2="400" y2="200"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".15"/><stop offset="100%" stop-color="#ec4899" stop-opacity=".05"/></linearGradient></defs>
+              <rect width="400" height="200" fill="url(#pf-g1)"/>
+              <circle cx="80" cy="70" r="30" fill="#8b5cf6" opacity=".12" stroke="#8b5cf6" stroke-opacity=".2"/>
+              <circle cx="80" cy="62" r="10" fill="#a78bfa" opacity=".25"/>
+              <path d="M65 82 Q80 95 95 82" stroke="#a78bfa" stroke-opacity=".2" stroke-width="2" fill="none"/>
+              <rect x="130" y="50" width="100" height="10" rx="5" fill="#8b5cf6" opacity=".3"/>
+              <rect x="130" y="68" width="70" height="6" rx="3" fill="#94a3b8" opacity=".15"/>
+              <rect x="130" y="82" width="80" height="6" rx="3" fill="#94a3b8" opacity=".12"/>
+              <rect x="40" y="125" width="100" height="60" rx="10" fill="#a78bfa" opacity=".07" stroke="#a78bfa" stroke-opacity=".12"/>
+              <rect x="150" y="125" width="100" height="60" rx="10" fill="#8b5cf6" opacity=".07" stroke="#8b5cf6" stroke-opacity=".12"/>
+              <rect x="260" y="125" width="100" height="60" rx="10" fill="#6366f1" opacity=".07" stroke="#6366f1" stroke-opacity=".12"/>
+              <rect x="280" y="50" width="80" height="20" rx="4" fill="#94a3b8" opacity=".06"/>
+              <rect x="280" y="76" width="80" height="20" rx="4" fill="#94a3b8" opacity=".06"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>ポートフォリオ</h3>
+            <p>デザイナー・エンジニア向けポートフォリオ。フィルタリング可能な作品グリッド、タイムライン、コンタクトフォーム付き。</p>
+            <div class="badges">
+              <span class="badge">Vite 6</span>
+              <span class="badge">Tailwind v4</span>
+              <span class="badge">View Transitions</span>
+              <span class="badge">Filterable Grid</span>
+            </div>
+            <div class="card-actions">
+              <a href="templates/portfolio/index.html" class="btn btn-primary">プレビュー →</a>
+              <a href="https://github.com/miyoshi-tricksy/html5-css3-template-beta/tree/master/templates/portfolio" class="btn btn-ghost" target="_blank" rel="noopener">ソースコード</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corporate -->
+        <div class="card">
+          <div class="card-visual">
+            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="co-g1" x1="0" y1="0" x2="400" y2="200"><stop offset="0%" stop-color="#0ea5e9" stop-opacity=".15"/><stop offset="100%" stop-color="#6366f1" stop-opacity=".05"/></linearGradient></defs>
+              <rect width="400" height="200" fill="url(#co-g1)"/>
+              <rect x="40" y="25" width="320" height="8" rx="4" fill="#0ea5e9" opacity=".15"/>
+              <rect x="40" y="50" width="150" height="14" rx="7" fill="#0ea5e9" opacity=".3"/>
+              <rect x="40" y="72" width="200" height="6" rx="3" fill="#94a3b8" opacity=".15"/>
+              <rect x="40" y="84" width="180" height="6" rx="3" fill="#94a3b8" opacity=".12"/>
+              <rect x="40" y="110" width="90" height="70" rx="8" fill="#0ea5e9" opacity=".06" stroke="#0ea5e9" stroke-opacity=".1"/>
+              <rect x="145" y="110" width="90" height="70" rx="8" fill="#0ea5e9" opacity=".06" stroke="#0ea5e9" stroke-opacity=".1"/>
+              <rect x="250" y="110" width="90" height="70" rx="8" fill="#0ea5e9" opacity=".06" stroke="#0ea5e9" stroke-opacity=".1"/>
+              <rect x="60" y="130" width="50" height="6" rx="3" fill="#0ea5e9" opacity=".2"/>
+              <rect x="165" y="130" width="50" height="6" rx="3" fill="#0ea5e9" opacity=".2"/>
+              <rect x="270" y="130" width="50" height="6" rx="3" fill="#0ea5e9" opacity=".2"/>
+              <circle cx="350" cy="60" r="25" fill="#6366f1" opacity=".06" stroke="#6366f1" stroke-opacity=".1"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>コーポレートサイト</h3>
+            <p>企業サイトテンプレート。ミッション・サービス・実績数値・ニュース・チーム紹介・アクセスの8セクション。</p>
+            <div class="badges">
+              <span class="badge">Vite 6</span>
+              <span class="badge">Tailwind v4</span>
+              <span class="badge">Scroll Animations</span>
+              <span class="badge">Number Counter</span>
+            </div>
+            <div class="card-actions">
+              <a href="templates/corporate/index.html" class="btn btn-primary">プレビュー →</a>
+              <a href="https://github.com/miyoshi-tricksy/html5-css3-template-beta/tree/master/templates/corporate" class="btn btn-ghost" target="_blank" rel="noopener">ソースコード</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog -->
+        <div class="card">
+          <div class="card-visual">
+            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="bl-g1" x1="0" y1="0" x2="400" y2="200"><stop offset="0%" stop-color="#22c55e" stop-opacity=".15"/><stop offset="100%" stop-color="#6366f1" stop-opacity=".05"/></linearGradient></defs>
+              <rect width="400" height="200" fill="url(#bl-g1)"/>
+              <rect x="40" y="25" width="240" height="55" rx="8" fill="#22c55e" opacity=".06" stroke="#22c55e" stroke-opacity=".1"/>
+              <rect x="50" y="35" width="120" height="8" rx="4" fill="#22c55e" opacity=".25"/>
+              <rect x="50" y="50" width="180" height="5" rx="2.5" fill="#94a3b8" opacity=".12"/>
+              <rect x="50" y="60" width="150" height="5" rx="2.5" fill="#94a3b8" opacity=".1"/>
+              <rect x="40" y="90" width="115" height="85" rx="8" fill="#94a3b8" opacity=".05" stroke="#94a3b8" stroke-opacity=".08"/>
+              <rect x="165" y="90" width="115" height="85" rx="8" fill="#94a3b8" opacity=".05" stroke="#94a3b8" stroke-opacity=".08"/>
+              <rect x="50" y="105" width="80" height="6" rx="3" fill="#22c55e" opacity=".2"/>
+              <rect x="50" y="118" width="90" height="4" rx="2" fill="#94a3b8" opacity=".1"/>
+              <rect x="175" y="105" width="80" height="6" rx="3" fill="#22c55e" opacity=".2"/>
+              <rect x="175" y="118" width="90" height="4" rx="2" fill="#94a3b8" opacity=".1"/>
+              <rect x="300" y="25" width="70" height="150" rx="8" fill="#94a3b8" opacity=".04" stroke="#94a3b8" stroke-opacity=".08"/>
+              <rect x="310" y="40" width="50" height="6" rx="3" fill="#94a3b8" opacity=".12"/>
+              <rect x="310" y="55" width="40" height="5" rx="2.5" fill="#94a3b8" opacity=".08"/>
+              <rect x="310" y="65" width="45" height="5" rx="2.5" fill="#94a3b8" opacity=".08"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>ブログ / メディア</h3>
+            <p>記事一覧・詳細ページ付きブログテンプレート。カテゴリ色分け、サイドバー、シェアボタン、ニュースレター登録フォーム搭載。</p>
+            <div class="badges">
+              <span class="badge">Vite 6</span>
+              <span class="badge">Tailwind v4</span>
+              <span class="badge">Multi-page</span>
+              <span class="badge">Scroll Animations</span>
+            </div>
+            <div class="card-actions">
+              <a href="templates/blog/index.html" class="btn btn-primary">プレビュー →</a>
+              <a href="https://github.com/miyoshi-tricksy/html5-css3-template-beta/tree/master/templates/blog" class="btn btn-ghost" target="_blank" rel="noopener">ソースコード</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-label">Features</div>
+      <h2 class="section-title">なぜこのテンプレート集か</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>最新技術スタック</h3>
+          <p>Vite 6 + Tailwind CSS v4。2026年のベストプラクティスに準拠。</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">💯</div>
+          <h3>Lighthouse 100点</h3>
+          <p>パフォーマンス、アクセシビリティ、ベストプラクティス、SEO — すべて満点を目標設計。</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🌓</div>
+          <h3>ダークモード対応</h3>
+          <p>ダーク/ライト切替対応。prefers-color-scheme による自動検出にも対応。</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🇯🇵</div>
+          <h3>日本語ファースト</h3>
+          <p>日本語コンテンツで設計・検証。Noto Sans JP + Inter の最適フォントペアリング。</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📱</div>
+          <h3>レスポンシブ</h3>
+          <p>モバイルファースト設計。Container Queries による次世代レスポンシブ対応。</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎬</div>
+          <h3>スクロールアニメーション</h3>
+          <p>CSS Scroll-driven Animations + View Transitions API。JS不要のネイティブアニメーション。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Built with modern web standards. No frameworks. No dependencies.</p>
+    <p><a href="https://github.com/miyoshi-tricksy/html5-css3-template-beta" target="_blank" rel="noopener">GitHub</a> · MIT License</p>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const html=document.documentElement;
+  const btn=document.querySelector('.theme-toggle');
+  const next=html.dataset.theme==='dark'?'light':'dark';
+  html.dataset.theme=next;
+  btn.textContent=next==='dark'?'🌙':'☀️';
+  localStorage.setItem('theme',next);
+}
+(function(){
+  const saved=localStorage.getItem('theme');
+  if(saved){document.documentElement.dataset.theme=saved;document.querySelector('.theme-toggle').textContent=saved==='dark'?'🌙':'☀️'}
+})();
+
+// Scroll reveal
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.card,.feature').forEach(el=>observer.observe(el));
+</script>
+
 </body>
 </html>
