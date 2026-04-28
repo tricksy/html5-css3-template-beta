@@ -12,7 +12,7 @@ for dir in "$ROOT"/templates/*/; do
   echo "🔨 Building $name..."
   cd "$dir"
   npm install --silent
-  npx vite build --outDir "$PREVIEW/$name"
+  npx vite build --outDir "$PREVIEW/$name" --base=./
 done
 
 echo "✅ 全テンプレートのビルド完了 → _preview/"
